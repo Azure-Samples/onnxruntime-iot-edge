@@ -9,7 +9,7 @@ products:
 ---
 
 
-<p align="center"><img width="80%" src="images_for_readme/header.jpg" alt="Integrate Azure with Machine Learning execution on ARM64 Devices"/></p>
+<p align="center"><img width="80%" src="images_for_readme/Header.jpg" alt="Integrate Azure with Machine Learning execution on ARM64 Devices"/></p>
 
 ## Integrate Azure with machine learning execution on the Jetson Nano (an ARM64 device)
 
