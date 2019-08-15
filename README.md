@@ -3,9 +3,9 @@ page_type: sample
 languages:
 - python
 products:
-- ONNX Runtime
-- Azute IoT Edge
-- Azure Blob Storage on IoT Edge
+- azure-machine-learning-service
+- azure-iot-edge
+- azure-storage
 ---
 
 
