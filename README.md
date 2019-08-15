@@ -16,10 +16,10 @@ products:
 In this tutorial you will learn how to integrate Azure services with machine learning on the NVIDIA Jetson Nano (an ARM64 device) using Python. By the end of this sample, you will have a low-cost DIY solution for object detection within a space and a unique understanding of integrating ARM64 platform with Azure IoT services and machine learning.
 <p align="center"><img width="100%" src="images_for_readme/arch.jpg" alt="The camera feed goes to the Jetson Nano which then sends the output to Azure"/></p>
 
-* [Phase One](#phase-one) focuses on setting up the related Azure cloud services.
-* [Phase Two](#phase-two) focuses on setting up the Jetson Nano to be ready for IoT Edge Development with Azure and ONNX Runtime.
-* [Phase Three](#phase-three) focuses on deploying an IoT Edge module to the device (combining phases one and two together).
-* [Phase Four](#phase-four) focuses on visualizing the data in Power BI via Azure Blob Storage.
+* [Phase One](#phase-one:-setting-up-the-azure-cloud-services) focuses on setting up the related Azure cloud services.
+* [Phase Two](#phase-two:-setting-up-the-jetson-nano) focuses on setting up the Jetson Nano to be ready for IoT Edge Development with Azure and ONNX Runtime.
+* [Phase Three](#phase-three:-model-deployment) focuses on deploying an IoT Edge module to the device (combining phases one and two together).
+* [Phase Four](#phase-four:-visualizing-data-in-power-bi-via-azure) focuses on visualizing the data in Power BI via Azure Blob Storage.
 
 # General prerequisites
 
