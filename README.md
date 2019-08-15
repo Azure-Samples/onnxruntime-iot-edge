@@ -301,19 +301,14 @@ For more help on troubleshooting Azure IoT Edge, go [here](https://docs.microsof
 Phase three of this tutorial focuses on deploying an object detection model on your Jetson.
 
 ## Prerequisites
-* Download the **ARM64_EdgeSolution** folder to your computer.
-
-<!-- BEGIN this needs to change -->
-* You can access this folder via [our link](aka.ms/onnxruntime-arm64).
-    * aka.ms/onnxruntime-arm64
-<!-- END this needs to change -->
+* Clone this repo to your local drive / computer.
 
 If you completed phases one and two, you should have the following dependencies already. Feel free to double check them.
 * Install Azure Account, Azure IoT Edge & Azure IoT Hub Toolkit extensions in VS Code.
 	* These will allow you to build and push IoT Edge solutions to a custom container and view output from the Jetson in VS Code.
 
 ## Module Deployment
-* On your computer (not the Jetson), open the innermost **ARM64_EdgeSolution** folder in VS Code (extracting the zip folder contents will create a duplicate-named outer folder).
+* On your computer (not the Jetson), open the folder for this repo in VS Code.
     * *Note: If you downloaded as a zip file, there may be two ARM64_EdgeSolution folders when you unzip, one nested in the other. Open the **INNER** one*
 
 * Select **View > Command Palette** to open the VS Code command palette.
