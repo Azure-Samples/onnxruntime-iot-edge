@@ -16,10 +16,10 @@ products:
 In this tutorial you will learn how to integrate Azure services with machine learning on the NVIDIA Jetson Nano (an ARM64 device) using Python. By the end of this sample, you will have a low-cost DIY solution for object detection within a space and a unique understanding of integrating ARM64 platform with Azure IoT services and machine learning.
 <p align="center"><img width="100%" src="images_for_readme/arch.jpg" alt="The camera feed goes to the Jetson Nano which then sends the output to Azure"/></p>
 
-* [Phase One](#phase-one:-setting-up-the-azure-cloud-services) focuses on setting up the related Azure cloud services.
-* [Phase Two](#phase-two:-setting-up-the-jetson-nano) focuses on setting up the Jetson Nano to be ready for IoT Edge Development with Azure and ONNX Runtime.
-* [Phase Three](#phase-three:-model-deployment) focuses on deploying an IoT Edge module to the device (combining phases one and two together).
-* [Phase Four](#phase-four:-visualizing-data-in-power-bi-via-azure) focuses on visualizing the data in Power BI via Azure Blob Storage.
+* [Phase One](#p1) focuses on setting up the related Azure cloud services.
+* [Phase Two](#p2) focuses on setting up the Jetson Nano to be ready for IoT Edge Development with Azure and ONNX Runtime.
+* [Phase Three](#p3) focuses on deploying an IoT Edge module to the device (combining phases one and two together).
+* [Phase Four](#p4) focuses on visualizing the data in Power BI via Azure Blob Storage.
 
 # General prerequisites
 
@@ -36,7 +36,7 @@ We expect the full tutorial to take an experienced developer ~3 hours.
 * Phase three: ~30 minutes (~10 minutes of work, the rest is load time)
 * Phase four: ~20 minutes (depending on your visualization needs)
 
-# Phase One: Setting up the Azure Cloud Services
+# <a name="p1"></a>Phase One: Setting up the Azure Cloud Services
 ## Purpose
 Phase one focuses on setting up the related Azure cloud components.
 
@@ -144,7 +144,7 @@ This installer is ~500MB so it will take a while to download over Wi-Fi (about 3
 
 * Select **OK** to finish creating the container.
 
-# Phase Two: Setting up the Jetson Nano
+# <a name="p2"></a>Phase Two: Setting up the Jetson Nano
 ## Purpose
 Phase two focuses on setting up the Jetson Nano to be ready for IoT Edge Development with Azure and ONNX Runtime.
 
@@ -295,7 +295,7 @@ If you get a 400 error in your edgeAgent menu, there's a chance you typed someth
 For more help on troubleshooting Azure IoT Edge, go [here](https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot).
 
 
-# Phase Three: Model deployment
+# <a name="p3"></a>Phase Three: Model deployment
 ## Purpose
 
 Phase three of this tutorial focuses on deploying an object detection model on your Jetson.
@@ -438,7 +438,7 @@ For further debugging, you can try these commands:
 
 For more help on troubleshooting Azure IoT Edge, go [here](https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot).
 
-# Phase Four: Visualizing Data in Power BI via Azure
+# <a name="p4"></a>Phase Four: Visualizing Data in Power BI via Azure
 
 ## Purpose
 Phase four focuses on visualizing the data being gathered by the model and stored in Azure Blob Storage using Power BI to display.
