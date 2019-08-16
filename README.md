@@ -381,7 +381,7 @@ CONTAINER_REGISTRY_ADDRESS="<Login server>"
 * The File Explorer should close and the output terminal in VS Code should look something like this:
 
 
-<p align="center"><img width="75%" src="images_for_readme/deploymentsuccessoutput.JPG" alt="a screenshot of visual studio code output terminal stating the deployment succeeded"/></p>
+<p align="center"><img width="75%" src="images_for_readme/deploymentsuccessoutput.jpg" alt="a screenshot of visual studio code output terminal stating the deployment succeeded"/></p>
 
 
 * Either in the Jetson terminal itself, or on a terminal that is SSH'd into the Jetson, you can verify that the PreModule and InferenceModules are running by typing the command `sudo iotedge list`. It should yield something like this (your module versions may be different):  
