@@ -109,7 +109,7 @@ This installer is ~500MB so it will take a while to download over Wi-Fi (about 3
 
 * In the top navigation bar, select **Add**.
 
-<p align="center"><img width="50%" src="Images\container_registry_setup.PNG" alt="a screenshot of the container registries dashboard"/></p>
+<p align="center"><img width="50%" src="images_for_readme/container_registry_setup.PNG" alt="a screenshot of the container registries dashboard"/></p>
 
 * Fill out the necessary fields
     * Name: What you want your container to be named
@@ -248,7 +248,7 @@ First, we will install the daemon and some prerequisites in order to register th
 * Register a new IoT Edge device in your IoT Hub by following [this tutorial](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal).
 
 * In your Azure IoT Hub the portal should look like this
-<p align="center"><img width="50%" src="images_for_readme/portal_jetson_menu.png" alt="a screenshot of the IoT Edge device on the Azure portal"/></p>
+<p align="center"><img width="50%" src="images_for_readme/portal_jetson_menu.PNG" alt="a screenshot of the IoT Edge device on the Azure portal"/></p>
 
 * Be sure to note copy the **Primary Connection String** of your device as you will need it for the next step.
 
@@ -372,31 +372,31 @@ CONTAINER_REGISTRY_ADDRESS="<Login server>"
 
 * After selecting the hub, click on the **Devices** drop down menu. You should be able to see your device like this:
 
- <p align="center"><img width="50%" src="images_for_readme/deployment1.PNG" alt="a screenshot of visual studio code with list of devices connected to the Azure IoT Hub"/></p>
+ <p align="center"><img width="50%" src="images_for_readme/deployment1.png" alt="a screenshot of visual studio code with list of devices connected to the Azure IoT Hub"/></p>
 
 * Right click on the device and select **Create Deployment for Single Device**. This will open a File Explorer window. Navigate into the **config** folder and select the deployment file.
 
- <p align="center"><img width="75%" src="images_for_readme/deploymentfile.JPG" alt="a screenshot of the file to be deployed which is deployment.arm64"/></p>
+ <p align="center"><img width="75%" src="images_for_readme/deploymentfile.jpg" alt="a screenshot of the file to be deployed which is deployment.arm64"/></p>
 
 * The File Explorer should close and the output terminal in VS Code should look something like this:
 
 
-<p align="center"><img width="75%" src="images_for_readme/deploymentsuccessoutput.JPG" alt="a screenshot of visual studio code output terminal stating the deployment succeeded"/></p>
+<p align="center"><img width="75%" src="images_for_readme/deploymentsuccessoutput.jpg" alt="a screenshot of visual studio code output terminal stating the deployment succeeded"/></p>
 
 
 * Either in the Jetson terminal itself, or on a terminal that is SSH'd into the Jetson, you can verify that the PreModule and InferenceModules are running by typing the command `sudo iotedge list`. It should yield something like this (your module versions may be different):  
 
 
- <p align="center"><img width="100%" src="images_for_readme/iotedgelist.JPG" alt="a screenshot of the modules running on the device: Camera Capture Module, edge Hub, edge Agent, Inference module, postprocessing module, azure blob storage"/></p>
+ <p align="center"><img width="100%" src="images_for_readme/iotedgelist.jpg" alt="a screenshot of the modules running on the device: Camera Capture Module, edge Hub, edge Agent, Inference module, postprocessing module, azure blob storage"/></p>
 
 
 * To view the output of the model in VS Code, select on the device in the Azure IoT Hub device menu and select **Start Monitoring Built-in Event Endpoint**. Your terminal should look like this:
 
- <p align="center"><img width="100%" src="images_for_readme/monitorendpoint.JPG" alt="a screenshot of the visual studio code terminal beginning to monitoring event output"/></p>
+ <p align="center"><img width="100%" src="images_for_readme/monitorendpoint.jpg" alt="a screenshot of the visual studio code terminal beginning to monitoring event output"/></p>
 
 * You should be able to see the output. You can select on the lock icon in the top right corner to lock the toggle at the bottom of the terminal window; now you can see the output in real time:
 
- <p align="center"><img width="100%" src="images_for_readme/monitorendpointoutput.JPG" alt="a screenshot of the visual studio code terminal monitoring event output"/></p>
+ <p align="center"><img width="100%" src="images_for_readme/monitorendpointoutput.jpg" alt="a screenshot of the visual studio code terminal monitoring event output"/></p>
 
 * Once your modules are up and running on your Jetson, you should be able to see inference outputs on the portal in your storage account!
 
@@ -444,7 +444,7 @@ Phase four focuses on visualizing the data being gathered by the model and store
 ## Visualization & Publishing
 
 * Connect to your Azure Blob Storage Account by selecting **Get Data**.
-<p align="center"><img width="75%" src="images_for_readme/PowerBIConnect.PNG" alt="a screenshot of the Get Data Screen in PowerBI with Azure Blob Storage highlighted"/></p>
+<p align="center"><img width="75%" src="images_for_readme/PowerBiConnect.png" alt="a screenshot of the Get Data Screen in PowerBI with Azure Blob Storage highlighted"/></p>
 
 * Follow the setup as it asks for the storage account name and connection string. The connection string can be found under **Access Keys** in your storage account resource.
 
@@ -453,12 +453,12 @@ Phase four focuses on visualizing the data being gathered by the model and store
 * If you want to select any particular columns/rows or clean up any data headers (and we suggest you do this to make the visualization process easier), select **Transform Data**. Otherwise, to load all raw data, select **Load**.
 
 <!-- Image must be changed due to namings -->
-<p align="center"><img width="75%" src="images_for_readme/PowerBiNavigator.PNG" alt="a screenshot of the folder Navigator in PowerBI"/></p>
+<p align="center"><img width="75%" src="images_for_readme/PowerBINavigator.jpg" alt="a screenshot of the folder Navigator in PowerBI"/></p>
 
 * Once the blob(s) is loaded, select **Binary** in the table to adjust the Power Query.
 
 * After you are finished, select **Close and Apply**.
-<p align="center"><img width="10%" src="images_for_readme/PowerBiClose.PNG" alt="a screenshot of the 'close and apply' button from Power BI"/></p>
+<p align="center"><img width="10%" src="images_for_readme/PowerBiClose.png" alt="a screenshot of the 'close and apply' button from Power BI"/></p>
 
 * Spend some time exploring different visualizations in Power BI and choose one you want to use for your data or [create your own](https://docs.microsoft.com/en-us/power-bi/power-bi-custom-visuals)! A good place to start is with the **New Visual** feature found on the **Home** tab.
 
