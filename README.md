@@ -444,7 +444,7 @@ Phase four focuses on visualizing the data being gathered by the model and store
 ## Visualization & Publishing
 
 * Connect to your Azure Blob Storage Account by selecting **Get Data**.
-<p align="center"><img width="75%" src="images_for_readme/PowerBIConnect.png" alt="a screenshot of the Get Data Screen in PowerBI with Azure Blob Storage highlighted"/></p>
+<p align="center"><img width="75%" src="images_for_readme/PowerBiConnect.png" alt="a screenshot of the Get Data Screen in PowerBI with Azure Blob Storage highlighted"/></p>
 
 * Follow the setup as it asks for the storage account name and connection string. The connection string can be found under **Access Keys** in your storage account resource.
 
@@ -453,7 +453,7 @@ Phase four focuses on visualizing the data being gathered by the model and store
 * If you want to select any particular columns/rows or clean up any data headers (and we suggest you do this to make the visualization process easier), select **Transform Data**. Otherwise, to load all raw data, select **Load**.
 
 <!-- Image must be changed due to namings -->
-<p align="center"><img width="75%" src="images_for_readme/PowerBiNavigator.jpg" alt="a screenshot of the folder Navigator in PowerBI"/></p>
+<p align="center"><img width="75%" src="images_for_readme/PowerBINavigator.jpg" alt="a screenshot of the folder Navigator in PowerBI"/></p>
 
 * Once the blob(s) is loaded, select **Binary** in the table to adjust the Power Query.
 
