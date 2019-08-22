@@ -129,6 +129,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
 * Clone this repo to your local drive / computer.
 
 #### Module Deployment
+
 * If using a different desktop PC for VS Code, you must login to your registry created [above](#container_reg). To do this, ensure that the Docker application is running on your desktop and that you are signed in. To sign in, using the Terminal of VS Code, run the command in the terminal of VS code:
 
     `docker login -u <username> -p <password> <registry_address>`
@@ -155,8 +156,11 @@ This part focuses on deploying an object detection model on your IoT Edge device
     ```
 
     * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
+    
+    * In the _Dockerfile.amd64_ in each sub-folder withing _modules_ replace the `mcr.microsoft.com/azureml/onnxruntime:v0.4.0` with the _full path to the ONNX Runtime + OpenVINO base image_. *Note:* the dockerfiles are setup to use the CPU-only version of the ONNX Runtime base image as default.
 
-    #### Cloud storage
+#### Cloud storage
+
     * Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False**.
 
         * Then in your deployment.template.json file, find the last occurrence of `azureblobstorageoniotedge`. This is where the device twin properties of your blob storage module are set.
@@ -176,6 +180,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
     * In **.vscode/settings.json** replace `_arm64_` with **amd64**.
 
     * Copy **deployment-amd64.template.json** to **deployment.template.json**
+
 #### Deploy to Device
 
 * Right click on **deployment.template.json**, then select **Build and Push IoT Edge Solution**. Behind the scenes, this runs two docker commands. One to build your container and another to push that to the container registry. _This step may take some time (15 minutes)_
