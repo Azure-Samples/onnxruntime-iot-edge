@@ -112,7 +112,8 @@ This installer is ~500MB so it will take a while to download over Wi-Fi (about 3
 
 ### Build the ONNX Runtime + OpenVINO base container image
 
-a. Build the base container image using the [Dockerfile.openvino](https://github.com/microsoft/onnxruntime/blob/master/dockerfiles/Dockerfile.openvino) from the `onnxruntime` Github repo.
+a. Build the base container image using the [Dockerfile.openvino](https://github.com/microsoft/onnxruntime/blob/master/dockerfiles/Dockerfile.openvino) from the [ONNX Runtime Github repo](https://github.com/microsoft/onnxruntime).
+
 b. Push this container image to your container registry created [above](#container_reg) using the following commands:
 
     `docker login -u <username> -p <password> <registry_address>`
@@ -189,19 +190,9 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
 * After selecting the hub, click on the **Devices** drop down menu. You should be able to see your device like this:
 
- <p align="center"><img width="50%" src="images_for_readme/deployment1.png" alt="a screenshot of visual studio code with list of devices connected to the Azure IoT Hub"/></p>
-
-* Right click on the device and select **Create Deployment for Single Device**. This will open a File Explorer window. Navigate into the **config** folder and select the deployment file.
-
- <p align="center"><img width="75%" src="images_for_readme/deploymentfile.jpg" alt="a screenshot of the file to be deployed which is deployment.arm64"/></p>
-
-* The File Explorer should close and the output terminal in VS Code should look something like this:
-
-<p align="center"><img width="75%" src="images_for_readme/deploymentsuccessoutput.jpg" alt="a screenshot of visual studio code output terminal stating the deployment succeeded"/></p>
+* Right click on the device and select **Create Deployment for Single Device**. This will open a File Explorer window. Navigate into the **config** folder and select the **deployment.amd64.json** file.
 
 * You can verify that the _PreModule_ and _InferenceModules_ are running by typing the command `sudo iotedge list` on the IoT Edge device terminal. It should yield something like this (your module versions may be different):
-
- <p align="center"><img width="100%" src="images_for_readme/iotedgelist.jpg" alt="a screenshot of the modules running on the device: Camera Capture Module, edge Hub, edge Agent, Inference module, postprocessing module, azure blob storage"/></p>
 
 * To view the output of the model in VS Code, select on the device in the Azure IoT Hub device menu and select **Start Monitoring Built-in Event Endpoint**. Your terminal should look like this:
 
