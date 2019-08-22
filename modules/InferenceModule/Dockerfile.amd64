@@ -1,0 +1,29 @@
+# Copyright (c) Microsoft. All rights reserved.
+# Licensed under the MIT license. See LICENSE file in the project root for
+# full license information.
+
+# replace this image with the full path to the ONNX Runtime + OpenVINO base image
+FROM mcr.microsoft.com/azureml/onnxruntime:v0.4.0
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install libssl-dev libffi-dev python3-pip --yes
+
+RUN pip3 install --upgrade pip
+ 
+RUN pip3 install azure-storage && \
+    pip3 install flask && \
+    pip3 install pytz
+
+# Expose the port
+EXPOSE 5000
+
+COPY TinyYOLO.onnx .
+COPY inference.py .
+COPY main.py .
+COPY labels.txt .
+
+ENTRYPOINT [ "python3", "-u", "./main.py" ]

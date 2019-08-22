@@ -6,7 +6,8 @@
     "tag": {
       "version": "camerathreadedcapturestable",
       "platforms": {
-        "arm64" : "./Dockerfile.arm64"
+        "arm64" : "./Dockerfile.arm64",
+        "amd64" : "./Dockerfile.amd64"
       }
     },
     "buildOptions": []
