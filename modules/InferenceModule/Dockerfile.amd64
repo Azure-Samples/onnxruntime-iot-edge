@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /app
 
 RUN apt-get update && \
-    apt-get install libssl-dev libffi-dev --yes
+    apt-get install libssl-dev libffi-dev python3-pip --yes
 
 RUN pip3 install --upgrade pip
  
