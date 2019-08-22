@@ -41,7 +41,7 @@ We expect the full tutorial to take an experienced developer ~3 hours.
 Phase one focuses on setting up the related Azure cloud components.
 
 ## Prerequisites
-### 1. [Download Visual Studio Code](https://code.visualstudio.com/)
+### 1. [Download Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=github-onnxruntimearm64-msgarage)
 
 This tutorial uses Visual Studio Code to connect to your device and hub to deploy modules.
 
@@ -73,7 +73,7 @@ This installer is ~500MB so it will take a while to download over Wi-Fi (about 3
 
 ## Overview on how to set up the Azure portal
 
-### Create an Azure account by following [this tutorial](https://azure.microsoft.com/en-us/free/)
+### Create an Azure account by following [this tutorial](https://azure.microsoft.com/en-us/free/?WT.mc_id=github-onnxruntimearm64-msgarage)
 * Your subscription must have pre-paid credits or bill through existing payment channels. (If you make an account for the first time, you can get 12 months free and $200 in credits to start with.)
 
 ### Create a resource group
@@ -153,7 +153,7 @@ Phase two focuses on setting up the Jetson Nano to be ready for IoT Edge Develop
 * [1 32+ GB microSD card and a microSD to SD card adapter](https://www.target.com/p/centon-mp-essential-micro-sdxc-card-uhs1-64gb-black-s1-msdxu1-64g/-/A-52362226)
 * [1 USB Mouse and USB Keyboard](https://www.staples.com/Logitech-MK120-Wired-Full-size-USB-Keyboard-and-Optical-Mouse-Combo-920-002565/product_886660)
 * [1 Ethernet cable (cat 6)](https://www.bestbuy.com/site/dynex-25-cat-6-network-cable-gray/8313083.p?skuId=8313083)
-* [1 USB camera](https://www.microsoft.com/accessories/en-us/products/webcams/lifecam-cinema/h5d-00013) or [1 IP camera](https://www.axis.com/en-ca/products/axis-p1245)
+* [1 USB camera](https://www.microsoft.com/accessories/en-us/products/webcams/lifecam-cinema/h5d-00013?WT.mc_id=github-onnxruntimearm64-msgarage) or [1 IP camera](https://www.axis.com/en-ca/products/axis-p1245)
 * 1 Laptop with SD card capability
 * Highly recommended
     * [1 female-to-female jumper](https://www.adafruit.com/product/1951?gclid=EAIaIQobChMI6cyOtpTv4wIVhv5kCh0-Sg8LEAQYBCABEgKqn_D_BwE)
@@ -237,7 +237,7 @@ First, we will install the daemon and some prerequisites in order to register th
     * Install the security daemon. The package is installed at /etc/iotedge/.
         `sudo apt-get install iotedge`
 
-        [source](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux#configure-the-azure-iot-edge-security-daemon) for above instructions.
+        [source](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux#configure-the-azure-iot-edge-security-daemon?WT.mc_id=github-onnxruntimearm64-msgarage) for above instructions.
 
 * (Optional) Verify your Linux kernel for Moby compatibility. 
   
@@ -245,7 +245,7 @@ First, we will install the daemon and some prerequisites in order to register th
 
 ### Register a new IoT Edge device in your IoT Hub
 
-* Register a new IoT Edge device in your IoT Hub by following [this tutorial](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal).
+* Register a new IoT Edge device in your IoT Hub by following [this tutorial](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal?WT.mc_id=github-onnxruntimearm64-msgarage).
 
 * In your Azure IoT Hub the portal should look like this
 <p align="center"><img width="50%" src="images_for_readme/portal_jetson_menu.PNG" alt="a screenshot of the IoT Edge device on the Azure portal"/></p>
@@ -292,7 +292,7 @@ If you get a 400 error in your edgeAgent menu, there's a chance you typed someth
 
 <!-- END delete later -->
 
-For more help on troubleshooting Azure IoT Edge, go [here](https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot).
+For more help on troubleshooting Azure IoT Edge, go [here](https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot?WT.mc_id=github-onnxruntimearm64-msgarage).
 
 
 # <a name="p3"></a>Phase Three: Model deployment
@@ -338,7 +338,7 @@ CONTAINER_REGISTRY_ADDRESS="<Login server>"
 
     * Change the variable **LOCAL_STORAGE_ACCOUNT_KEY** to your generated local storage account key. You can use this generator [here](https://generate.plus/en/base64?gp_base64_base%5Blength%5D=64).
 
-    * In the InferenceModule directory, in main.py adjust the variable **block_blob_service** to hold the connection string to the local blob storage account. You can find information about configuring connection strings [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#create-a-connection-string-for-an-explicit-storage-endpoint) or just replace the given `< >` with what is required.
+    * In the InferenceModule directory, in main.py adjust the variable **block_blob_service** to hold the connection string to the local blob storage account. You can find information about configuring connection strings [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#create-a-connection-string-for-an-explicit-storage-endpoint?WT.mc_id=github-onnxruntimearm64-msgarage) or just replace the given `< >` with what is required.
 
     * Run `sudo mkdir /home/storagedata` in the SSH terminal.
 
@@ -431,7 +431,7 @@ For further debugging, you can try these commands:
 
 * Run `sudo docker logs <module name>` to view specific error logs for a module
 
-For more help on troubleshooting Azure IoT Edge, go [here](https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot).
+For more help on troubleshooting Azure IoT Edge, go [here](https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot?WT.mc_id=github-onnxruntimearm64-msgarage).
 
 # <a name="p4"></a>Phase Four: Visualizing Data in Power BI via Azure
 
@@ -439,7 +439,7 @@ For more help on troubleshooting Azure IoT Edge, go [here](https://docs.microsof
 Phase four focuses on visualizing the data being gathered by the model and stored in Azure Blob Storage using Power BI to display.
 
 ## Prerequisites
-[Download and launch Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/)
+[Download and launch Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/?WT.mc_id=github-onnxruntimearm64-msgarage)
 
 ## Visualization & Publishing
 
@@ -460,19 +460,19 @@ Phase four focuses on visualizing the data being gathered by the model and store
 * After you are finished, select **Close and Apply**.
 <p align="center"><img width="10%" src="images_for_readme/PowerBiClose.png" alt="a screenshot of the 'close and apply' button from Power BI"/></p>
 
-* Spend some time exploring different visualizations in Power BI and choose one you want to use for your data or [create your own](https://docs.microsoft.com/en-us/power-bi/power-bi-custom-visuals)! A good place to start is with the **New Visual** feature found on the **Home** tab.
+* Spend some time exploring different visualizations in Power BI and choose one you want to use for your data or [create your own](https://docs.microsoft.com/en-us/power-bi/power-bi-custom-visuals?WT.mc_id=github-onnxruntimearm64-msgarage)! A good place to start is with the **New Visual** feature found on the **Home** tab.
 
-    * For inspiration and ideas on how to visualize your data, visit [Power BI's theme gallery.](https://community.powerbi.com/t5/Themes-Gallery/bd-p/ThemesGallery)
+    * For inspiration and ideas on how to visualize your data, visit [Power BI's theme gallery.](https://community.powerbi.com/t5/Themes-Gallery/bd-p/ThemesGallery?WT.mc_id=github-onnxruntimearm64-msgarage)
 
 For more details on formatting, please visit [this blog post](https://sharepointmike.wordpress.com/2015/10/03/formatting-power-bi-visualizations/) on formatting Power BI visualizations.
 
-After you have finished making your visualization, you can **publish** your report by following [this tutorial](https://docs.microsoft.com/en-us/power-bi/desktop-upload-desktop-files).
+After you have finished making your visualization, you can **publish** your report by following [this tutorial](https://docs.microsoft.com/en-us/power-bi/desktop-upload-desktop-files?WT.mc_id=github-onnxruntimearm64-msgarage).
 
 ## Troubleshooting
 
-For help troubleshooting on Power BI, please visit [Power BI's documentation site](https://docs.microsoft.com/en-us/power-bi/) to learn more.
+For help troubleshooting on Power BI, please visit [Power BI's documentation site](https://docs.microsoft.com/en-us/power-bi/?WT.mc_id=github-onnxruntimearm64-msgarage) to learn more.
 
-For technical help, please visit [Power BI's support page](https://powerbi.microsoft.com/en-us/support/).
+For technical help, please visit [Power BI's support page](https://powerbi.microsoft.com/en-us/support/?WT.mc_id=github-onnxruntimearm64-msgarage).
 
 # Next steps & resources
 ## Next steps
@@ -488,9 +488,9 @@ Congratulations! In this tutorial you learned how to integrate Azure with machin
 
 * Deploy your own model!
     * Check out ONNX's pre-made model zoo [here](https://github.com/onnx/models) for models to download and deploy.
-    * Create your own model using [Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/service/tutorial-train-models-with-aml) or [Custom Vision](https://www.customvision.ai/).
+    * Create your own model using [Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/service/tutorial-train-models-with-aml?WT.mc_id=github-onnxruntimearm64-msgarage) or [Custom Vision](https://www.customvision.ai/?WT.mc_id=github-onnxruntimearm64-msgarage).
 
-* Create a dashboard for your Power BI report by following [this tutorial](https://docs.microsoft.com/en-us/power-bi/service-dashboard-create).
+* Create a dashboard for your Power BI report by following [this tutorial](https://docs.microsoft.com/en-us/power-bi/service-dashboard-create?WT.mc_id=github-onnxruntimearm64-msgarage).
 
 ## Resources
 ### Here are some resources for extra learning and exploring
@@ -498,18 +498,18 @@ Congratulations! In this tutorial you learned how to integrate Azure with machin
 * [An example of how to set up a simple Docker container](https://docs.docker.com/get-started/)
     * [Learn more about Docker containers](https://www.docker.com/resources/what-container)
 
-* [Learn more about Azure IoT Edge](https://azure.microsoft.com/en-us/services/iot-edge/)
+* [Learn more about Azure IoT Edge](https://azure.microsoft.com/en-us/services/iot-edge/?WT.mc_id=github-onnxruntimearm64-msgarage)
 
-* [Tips and tricks for creating reports with Power BI](https://docs.microsoft.com/en-us/power-bi/power-bi-reports-tips-and-tricks-for-creating)
+* [Tips and tricks for creating reports with Power BI](https://docs.microsoft.com/en-us/power-bi/power-bi-reports-tips-and-tricks-for-creating?WT.mc_id=github-onnxruntimearm64-msgarage)
 
 * [Learn more about Azure Blob Storage and Power BI](http://www.gastoncruz.com/2016/09/17/power-bi-azure-blob-storage/)
 
 # Additional help & contributions
 ## Additional help
 If you are seeking additional help, please visit
-* [Azure IoT Edge Troubleshooting](https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot)
+* [Azure IoT Edge Troubleshooting](https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot?WT.mc_id=github-onnxruntimearm64-msgarage)
 
-* [Power BI's documentation site with resources in the menu on the left of the page](https://docs.microsoft.com/en-us/power-bi/desktop-what-is-desktop)
+* [Power BI's documentation site with resources in the menu on the left of the page](https://docs.microsoft.com/en-us/power-bi/desktop-what-is-desktop?WT.mc_id=github-onnxruntimearm64-msgarage)
 
 * [Learn more about the Jetson Nano](https://developer.nvidia.com/embedded/jetson-nano-developer-kit)
 
