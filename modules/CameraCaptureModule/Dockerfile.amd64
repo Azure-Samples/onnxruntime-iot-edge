@@ -7,6 +7,9 @@ FROM mcr.microsoft.com/azureml/onnxruntime:v0.4.0
 
 WORKDIR /app
 
+RUN apt-get update && \
+    apt-get install python3-pip --yes
+    
 RUN pip3 install requests && \
     pip3 install pytz
 
