@@ -1,10 +1,9 @@
-<p align="center"><img width="80%" src="./Header-openvino.png" /></p>
 
 ## Reference implementation for deploying ONNX Models to Intel OpenVINO based devices with ONNX Runtime and Azure IoT Edge
 
 In this tutorial, you will learn how to deploy an ONNX Model to an IoT Edge device based on Intel platform, using ONNX Runtime for HW acceleration of the AI model.
 By completing this tutorial, you will have a low-cost DIY solution for object detection within a space and a unique understanding of integrating ONNX Runtime with Azure IoT services and machine learning.
-<p align="center"><img width="50%" src="images_for_readme/arch.jpg" /></p>
+<p align="center"><img width="80%" src="images_for_readme/Header-openvino.png" /></p>
 
 ### Prerequisites
 #### 1. [Download Visual Studio Code](https://code.visualstudio.com/)
