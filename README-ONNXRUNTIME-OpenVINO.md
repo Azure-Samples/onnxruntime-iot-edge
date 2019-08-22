@@ -5,6 +5,8 @@ In this tutorial, you will learn how to deploy an ONNX Model to an IoT Edge devi
 By completing this tutorial, you will have a low-cost DIY solution for object detection within a space and a unique understanding of integrating ONNX Runtime with Azure IoT services and machine learning.
 <p align="center"><img width="80%" src="images_for_readme/Header-openvino.png" /></p>
 
+Skip [ahead](#get_started) if you already have the setup to work with Visual Studio and Azure services. 
+
 ### Prerequisites
 #### 1. [Download Visual Studio Code](https://code.visualstudio.com/)
 
@@ -110,7 +112,7 @@ This installer is ~500MB so it will take a while to download over Wi-Fi (about 3
 
 * Select **OK** to finish creating the container.
 
-### Build the ONNX Runtime + OpenVINO base container image
+### <a name="get_started"></a>Build the ONNX Runtime + OpenVINO base container image
 
 a. Build the base container image using the [Dockerfile.openvino](https://github.com/microsoft/onnxruntime/blob/master/dockerfiles/Dockerfile.openvino) from the [ONNX Runtime Github repo](https://github.com/microsoft/onnxruntime).
 
