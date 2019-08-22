@@ -161,25 +161,25 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
 #### Cloud storage
 
-    * Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False**.
+ * Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False**.
 
-        * Then in your deployment.template.json file, find the last occurrence of `azureblobstorageoniotedge`. This is where the device twin properties of your blob storage module are set.
+ * Then in your deployment.template.json file, find the last occurrence of `azureblobstorageoniotedge`. This is where the device twin properties of your blob storage module are set.
 
-        * Change the **cloudStorageConnectionString** variable to your cloud storage connection where it has `"<insert cloud storage connection string here>"`. You can find the connection string on the portal in your storage account under the **Access Keys** tab.
+ * Change the **cloudStorageConnectionString** variable to your cloud storage connection where it has `"<insert cloud storage connection string here>"`. You can find the connection string on the portal in your storage account under the **Access Keys** tab.
 
-        * Change the variable **LOCAL_STORAGE_ACCOUNT_NAME** to the container you created in your storage account during **phase one** (i.e. storagetestlocal).
+ * Change the variable **LOCAL_STORAGE_ACCOUNT_NAME** to the container you created in your storage account during **phase one** (i.e. storagetestlocal).
 
-        * Change the variable **LOCAL_STORAGE_ACCOUNT_KEY** to your generated local storage account key. You can use this generator [here](https://generate.plus/en/base64?gp_base64_base%5Blength%5D=64).
+ * Change the variable **LOCAL_STORAGE_ACCOUNT_KEY** to your generated local storage account key. You can use this generator [here](https://generate.plus/en/base64?gp_base64_base%5Blength%5D=64).
 
-        * In the InferenceModule directory, in main.py adjust the variable **block_blob_service** to hold the connection string to the local blob storage account. You can find information about configuring connection strings [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#create-a-connection-string-for-an-explicit-storage-endpoint) or just replace the given `< >` with what is required.
+ * In the InferenceModule directory, in main.py adjust the variable **block_blob_service** to hold the connection string to the local blob storage account. You can find information about configuring connection strings [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#create-a-connection-string-for-an-explicit-storage-endpoint) or just replace the given `< >` with what is required.
 
-        * Run `sudo mkdir /home/storagedata` in the SSH terminal.
+ * Run `sudo mkdir /home/storagedata` in the SSH terminal.
 
-    #### Switch the VSCode configuration to amd64
+#### Switch the VSCode configuration to amd64
 
-    * In **.vscode/settings.json** replace `_arm64_` with **amd64**.
+ * In **.vscode/settings.json** replace _arm64_ with **amd64**.
 
-    * Copy **deployment-amd64.template.json** to **deployment.template.json**
+ * Copy **deployment-amd64.template.json** to **deployment.template.json**
 
 #### Deploy to Device
 
@@ -242,24 +242,24 @@ This step focuses on visualizing the data being gathered by the model and stored
 
 #### Visualization & Publishing
 
-    * Connect to your Azure Blob Storage Account by selecting **Get Data**.
-    <p align="center"><img width="75%" src="images_for_readme/PowerBiConnect.png" alt="a screenshot of the Get Data Screen in PowerBI with Azure Blob Storage highlighted"/></p>
+  * Connect to your Azure Blob Storage Account by selecting **Get Data**.
+  <p align="center"><img width="75%" src="images_for_readme/PowerBiConnect.png" alt="a screenshot of the Get Data Screen in PowerBI with Azure Blob Storage highlighted"/></p>
 
-    * Follow the setup as it asks for the storage account name and connection string. The connection string can be found under **Access Keys** in your storage account resource.
+  * Follow the setup as it asks for the storage account name and connection string. The connection string can be found under **Access Keys** in your storage account resource.
 
-    * Select the container with the data you want to load.
+  * Select the container with the data you want to load.
 
-    * If you want to select any particular columns/rows or clean up any data headers (and we suggest you do this to make the visualization process easier), select **Transform Data**. Otherwise, to load all raw data, select **Load**.
+  * If you want to select any particular columns/rows or clean up any data headers (and we suggest you do this to make the visualization process easier), select **Transform Data**. Otherwise, to load all raw data, select **Load**.
 
-    <!-- Image must be changed due to namings -->
-    <p align="center"><img width="75%" src="images_for_readme/PowerBINavigator.jpg" alt="a screenshot of the folder Navigator in PowerBI"/></p>
+  <!-- Image must be changed due to namings -->
+  <p align="center"><img width="75%" src="images_for_readme/PowerBINavigator.jpg" alt="a screenshot of the folder Navigator in PowerBI"/></p>
 
-    * Once the blob(s) is loaded, select **Binary** in the table to adjust the Power Query.
+  * Once the blob(s) is loaded, select **Binary** in the table to adjust the Power Query.
 
-    * After you are finished, select **Close and Apply**.
-    <p align="center"><img width="10%" src="images_for_readme/PowerBiClose.png" alt="a screenshot of the 'close and apply' button from Power BI"/></p>
+  * After you are finished, select **Close and Apply**.
+  <p align="center"><img width="10%" src="images_for_readme/PowerBiClose.png" alt="a screenshot of the 'close and apply' button from Power BI"/></p>
 
-    * Spend some time exploring different visualizations in Power BI and choose one you want to use for your data or [create your own](https://docs.microsoft.com/en-us/power-bi/power-bi-custom-visuals)! A good place to start is with the **New Visual** feature found on the **Home** tab.
+  * Spend some time exploring different visualizations in Power BI and choose one you want to use for your data or [create your own](https://docs.microsoft.com/en-us/power-bi/power-bi-custom-visuals)! A good place to start is with the **New Visual** feature found on the **Home** tab.
 
 For inspiration and ideas on how to visualize your data, visit [Power BI's theme gallery.](https://community.powerbi.com/t5/Themes-Gallery/bd-p/ThemesGallery)
 
