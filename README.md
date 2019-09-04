@@ -18,7 +18,8 @@ In simple terms, developers no longer need to worry about the nuances of hardwar
 
 **[ONNX Runtime with OpenVINO](./README-ONNXRUNTIME-OpenVINO.md)** is the tutorial examle for dpeloying pre-trained ONNX models with ONNX Runtime using the OpenVINO SDK for acceleration of the model.
 
-#### Contributions
+#### Contribution
+
 This project was created with active contributions from [Abhinav Ayalur](https://github.com/abhi12-ayalur), [Angela Martin](https://github.com/t-anma), [Kaden Dippe](https://github.com/Kaden-Dippe), [Kelly Lin](https://github.com/kemichi), [Lindsey Cleary](https://github.com/lindseyc) and [Priscilla Lui](https://github.com/priscillalui)
 
 This project welcomes contributions and suggestions. Most contributions require you to
