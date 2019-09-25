@@ -105,8 +105,8 @@
               "image": "mcr.microsoft.com/azure-blob-storage:latest",
               "createOptions": {
                   "Env": [
-                    "LOCAL_STORAGE_ACCOUNT_NAME=<your local storage container name>",
-                    "LOCAL_STORAGE_ACCOUNT_KEY=<insert your generated local storage account key here>"
+                    "LOCAL_STORAGE_ACCOUNT_NAME=$MY_STORAGE_ACCOUNT_NAME",
+                    "LOCAL_STORAGE_ACCOUNT_KEY=$MY_STORAGE_ACCOUNT_KEY"
                   ],
                   "HostConfig": {
                     "NetworkMode": "Host",
