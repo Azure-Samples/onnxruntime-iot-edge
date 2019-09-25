@@ -23,7 +23,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
 * You should see a 'Login Succeeded' message.
 
 * On your computer, open the folder for this repo in VS Code.
-    * *Note: If you downloaded as a zip file, there may be two ARM64_EdgeSolution folders when you unzip, one nested in the other. Open the **INNER** one*
+    * Note: If you downloaded as a zip file, there may be two *onnxruntime-iot-edge-master* folders when you unzip, one nested in the other. Open the **INNER** one
 
     * Select **View > Command Palette** to open the VS Code command palette.
 
