@@ -8,21 +8,9 @@ By completing this tutorial, you will have a low-cost DIY solution for object de
 
 [Setup Azure account and Visual Studio enviroment](./README-Setup.md) or [skip ahead](#get_started) if you already have the setup to work with Visual Studio and Azure services. 
 
-### <a name="get_started"></a>Build the ONNX Runtime + OpenVINO base container image
+### <a name="get_started"></a>Model deployment With ONXN Runtime + OpenVINO
 
-a. Build the base container image using the [Dockerfile.openvino](https://github.com/microsoft/onnxruntime/blob/master/dockerfiles/Dockerfile.openvino) from the [ONNX Runtime Github repo](https://github.com/microsoft/onnxruntime).
-
-b. Push this container image to your container registry created [above](./README-Setup#container_reg) using the following commands:
-
-    `docker login -u <username> -p <password> <registry_address>`
-    `docker tag <Login_server/tag_onxxruntime_base_image> <image ID of the container created in _a._>`
-    `docker push <tag for the base image created above>`
-
-This base image will be used to create the application containers in Visual Studio Code.
-
-### Model deployment With ONXN Runtime + OpenVINO
-
-This part focuses on deploying an object detection model on your IoT Edge device using ONNX models.
+This part focuses on deploying an object detection model on your IoT Edge device using a pretrained model from the ONNX model zoo.
 
 * Clone this repo to your local drive / computer.
 
@@ -34,8 +22,6 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
 * You should see a 'Login Succeeded' message.
 
-* Pull the ONNX Runtime base image to your desktop's registry: `docker pull <full_path_of_the_ONNX_Runtime_base_image>`
-
 * On your computer, open the folder for this repo in VS Code.
     * *Note: If you downloaded as a zip file, there may be two ARM64_EdgeSolution folders when you unzip, one nested in the other. Open the **INNER** one*
 
@@ -44,6 +30,8 @@ This part focuses on deploying an object detection model on your IoT Edge device
     * In the command palette, enter and run the command **Azure: Sign in** and follow the instructions to sign into your Azure account.
 
     * Open the **.env** file and replace _username_, _password_ and _login server_ with the credentials of the container registry that was set up [above](./README-Setup#container_reg).
+    
+    * In the **.env** file replace the _Storage account name_ and _access key_ with the details of your Azure Storage account details.
 
     * Fill in the **.env** file so that it now looks something like this:
 
@@ -51,11 +39,11 @@ This part focuses on deploying an object detection model on your IoT Edge device
     CONTAINER_REGISTRY_USERNAME="<_username_>"
     CONTAINER_REGISTRY_PASSWORD="<_password_>"
     CONTAINER_REGISTRY_ADDRESS="<_Login server_>"
+    MY_STORAGE_ACCOUNT_NAME="<_Storage account name_>"
+    MY_STORAGE_ACCOUNT_KEY="<_access key_>"
     ```
 
     * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
-    
-    * In the _Dockerfile.amd64_ in each sub-folder withing _modules_ replace the `mcr.microsoft.com/azureml/onnxruntime:v0.4.0` with the _full path to the ONNX Runtime + OpenVINO base image_. *Note:* the dockerfiles are setup to use the CPU-only version of the ONNX Runtime base image as default.
 
 #### Cloud storage
 
