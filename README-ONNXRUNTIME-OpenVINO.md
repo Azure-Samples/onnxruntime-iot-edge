@@ -10,7 +10,7 @@ By completing this tutorial, you will have a low-cost DIY solution for object de
 
 ### <a name="get_started"></a>Model deployment With ONXN Runtime + OpenVINO
 
-This part focuses on deploying an object detection model on your IoT Edge device using ONNX models.
+This part focuses on deploying an object detection model on your IoT Edge device using a pretrained model from the ONNX model zoo.
 
 * Clone this repo to your local drive / computer.
 
@@ -18,11 +18,10 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
 * If using a different desktop PC for VS Code, you must login to your registry created in [this](./README-Setup.md#create-a-container-registry) step. To do this, ensure that the Docker application is running on your desktop and that you are signed in. To sign in, using the Terminal of VS Code, run the command in the terminal of VS code:
 
+
     `docker login -u <username> -p <password> <registry_address>`
 
 * You should see a 'Login Succeeded' message.
-
-* Pull the ONNX Runtime base image to your desktop's registry: `docker pull <full_path_of_the_ONNX_Runtime_base_image>`
 
 * On your computer, open the folder for this repo in VS Code.
     * *Note: If you downloaded as a zip file, there may be two ARM64_EdgeSolution folders when you unzip, one nested in the other. Open the **INNER** one*
@@ -32,6 +31,18 @@ This part focuses on deploying an object detection model on your IoT Edge device
     * In the command palette, enter and run the command **Azure: Sign in** and follow the instructions to sign into your Azure account.
 
     * Open the **.env** file and replace _username_, _password_ and _login server_ for the _CONTAINER_REGISTRY_ variables with the credentials of the container registry that was set up in [this](./README-Setup.md#create-a-container-registry) step.
+    
+    * In the **.env** file replace the _Storage account name_ and _access key_ with the details of your Azure Storage account details.
+
+    * Fill in the **.env** file so that it now looks something like this:
+
+    ```
+    CONTAINER_REGISTRY_USERNAME="<_username_>"
+    CONTAINER_REGISTRY_PASSWORD="<_password_>"
+    CONTAINER_REGISTRY_ADDRESS="<_Login server_>"
+    MY_STORAGE_ACCOUNT_NAME="<_Storage account name_>"
+    MY_STORAGE_ACCOUNT_KEY="<_access key_>"
+    ```
 
     * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
 
