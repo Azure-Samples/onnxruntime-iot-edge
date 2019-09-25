@@ -194,7 +194,7 @@ If you completed phases one and two, you should have the following dependencies 
 
 ## Module Deployment
 * On your computer (not the Jetson), open the folder for this repo in VS Code.
-    * *Note: If you downloaded as a zip file, there may be two ARM64_EdgeSolution folders when you unzip, one nested in the other. Open the **INNER** one*
+    * Note: If you downloaded as a zip file, there may be two *onnxruntime-iot-edge-master* folders when you unzip, one nested in the other. Open the **INNER** one
 
 * Select **View > Command Palette** to open the VS Code command palette.
 
