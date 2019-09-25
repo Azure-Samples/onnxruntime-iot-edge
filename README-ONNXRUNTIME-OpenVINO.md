@@ -16,7 +16,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
 #### Module Deployment
 
-* If using a different desktop PC for VS Code, you must login to your registry created [above](./README-Setup#container_reg). To do this, ensure that the Docker application is running on your desktop and that you are signed in. To sign in, using the Terminal of VS Code, run the command in the terminal of VS code:
+* If using a different desktop PC for VS Code, you must login to your registry created [above](./README-Setup.md#create-a-container-registry). To do this, ensure that the Docker application is running on your desktop and that you are signed in. To sign in, using the Terminal of VS Code, run the command in the terminal of VS code:
 
     `docker login -u <username> -p <password> <registry_address>`
 
