@@ -16,7 +16,8 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
 #### Module Deployment
 
-* If using a different desktop PC for VS Code, you must login to your registry created [above](./README-Setup.md#create-a-container-registry). To do this, ensure that the Docker application is running on your desktop and that you are signed in. To sign in, using the Terminal of VS Code, run the command in the terminal of VS code:
+* If using a different desktop PC for VS Code, you must login to your registry created in [this](./README-Setup.md#create-a-container-registry) step. To do this, ensure that the Docker application is running on your desktop and that you are signed in. To sign in, using the Terminal of VS Code, run the command in the terminal of VS code:
+
 
     `docker login -u <username> -p <password> <registry_address>`
 
@@ -29,7 +30,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
     * In the command palette, enter and run the command **Azure: Sign in** and follow the instructions to sign into your Azure account.
 
-    * Open the **.env** file and replace _username_, _password_ and _login server_ with the credentials of the container registry that was set up [above](./README-Setup#container_reg).
+    * Open the **.env** file and replace _username_, _password_ and _login server_ for the _CONTAINER_REGISTRY_ variables with the credentials of the container registry that was set up in [this](./README-Setup.md#create-a-container-registry) step.
     
     * In the **.env** file replace the _Storage account name_ and _access key_ with the details of your Azure Storage account details.
 
@@ -49,18 +50,27 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
  * Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False**.
 
- * Then in your deployment.template.json file, find the last occurrence of `azureblobstorageoniotedge`. This is where the device twin properties of your blob storage module are set.
+ * In the **.env** file update the _MY_STORAGE_ACCOUNT_NAME_, _MY_STORAGE_ACCOUNT_KEY_ and _MY_STORAGE_CONNECTION_STRING_ entries with the details of your Azure Storage account details.
 
- * Change the **cloudStorageConnectionString** variable to your cloud storage connection where it has `"<insert cloud storage connection string here>"`. You can find the connection string on the portal in your storage account under the **Access Keys** tab.
-
- * Change the variable **LOCAL_STORAGE_ACCOUNT_NAME** to the container you created in your storage account during **phase one** (i.e. storagetestlocal).
-
- * Change the variable **LOCAL_STORAGE_ACCOUNT_KEY** to your generated local storage account key. You can use this generator [here](https://generate.plus/en/base64?gp_base64_base%5Blength%5D=64).
+ * You can find the _Storage account name_, _access key_ and _Connection string_ on the Azure portal in your storage account under the **Access Keys** tab.
 
  * In the InferenceModule directory, in main.py adjust the variable **block_blob_service** to hold the connection string to the local blob storage account. You can find information about configuring connection strings [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#create-a-connection-string-for-an-explicit-storage-endpoint) or just replace the given `< >` with what is required.
 
  * Run `sudo mkdir /home/storagedata` in the SSH terminal.
+ 
+ ----
+ 
+ After these steps the **.env** file should have the following variables with the appropriate values for your account:
 
+    ```
+    CONTAINER_REGISTRY_USERNAME="<username>"
+    CONTAINER_REGISTRY_PASSWORD="<password>"
+    CONTAINER_REGISTRY_ADDRESS="<Login server>"
+    MY_STORAGE_ACCOUNT_NAME="<Storage account name>"
+    MY_STORAGE_ACCOUNT_KEY="<access key>"
+    MY_STORAGE_CONNECTION_STRING="<Connection string>"
+    ```
+    
 #### Switch the VSCode configuration to amd64
 
  * In **.vscode/settings.json** replace _arm64_ with **amd64**.
