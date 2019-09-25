@@ -183,7 +183,7 @@
         "deviceToCloudUploadProperties": {
           "uploadOn": "true",
           "uploadOrder": "OldestFirst",
-          "cloudStorageConnectionString": "<insert cloud storage connection string here>",
+          "cloudStorageConnectionString": "$MY_STORAGE_CONNECTION_STRING",
           "storageContainersForUpload": {
             "localcontainer": {
               "target": "storagetest"
