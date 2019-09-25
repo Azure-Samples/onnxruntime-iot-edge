@@ -8,19 +8,7 @@ By completing this tutorial, you will have a low-cost DIY solution for object de
 
 [Setup Azure account and Visual Studio enviroment](./README-Setup.md) or [skip ahead](#get_started) if you already have the setup to work with Visual Studio and Azure services. 
 
-### <a name="get_started"></a>Build the ONNX Runtime + OpenVINO base container image
-
-a. Build the base container image using the [Dockerfile.openvino](https://github.com/microsoft/onnxruntime/blob/master/dockerfiles/Dockerfile.openvino) from the [ONNX Runtime Github repo](https://github.com/microsoft/onnxruntime).
-
-b. Push this container image to your container registry created [above](./README-Setup#container_reg) using the following commands:
-
-    `docker login -u <username> -p <password> <registry_address>`
-    `docker tag <Login_server/tag_onxxruntime_base_image> <image ID of the container created in _a._>`
-    `docker push <tag for the base image created above>`
-
-This base image will be used to create the application containers in Visual Studio Code.
-
-### Model deployment With ONXN Runtime + OpenVINO
+### <a name="get_started"></a>Model deployment With ONXN Runtime + OpenVINO
 
 This part focuses on deploying an object detection model on your IoT Edge device using ONNX models.
 
@@ -43,7 +31,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
     * In the command palette, enter and run the command **Azure: Sign in** and follow the instructions to sign into your Azure account.
 
-    * Open the **.env** file and replace _username_, _password_ and _login server_ with the credentials of the container registry that was set up [above](./README-Setup#container_reg).
+    * Open the **.env** file and replace _username_, _password_ and _login server_ with the credentials of the container registry that was set up in [this](./README-Setup.md#create-a-container-registry) step.
 
     * Fill in the **.env** file so that it now looks something like this:
 
@@ -51,23 +39,20 @@ This part focuses on deploying an object detection model on your IoT Edge device
     CONTAINER_REGISTRY_USERNAME="<_username_>"
     CONTAINER_REGISTRY_PASSWORD="<_password_>"
     CONTAINER_REGISTRY_ADDRESS="<_Login server_>"
+    MY_STORAGE_ACCOUNT_NAME="<Storage account name>"
+    MY_STORAGE_ACCOUNT_KEY="<access key>"
+    MY_STORAGE_CONNECTION_STRING="<Connection string>"
     ```
 
     * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
-    
-    * In the _Dockerfile.amd64_ in each sub-folder withing _modules_ replace the `mcr.microsoft.com/azureml/onnxruntime:v0.4.0` with the _full path to the ONNX Runtime + OpenVINO base image_. *Note:* the dockerfiles are setup to use the CPU-only version of the ONNX Runtime base image as default.
 
 #### Cloud storage
 
  * Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False**.
 
- * Then in your deployment.template.json file, find the last occurrence of `azureblobstorageoniotedge`. This is where the device twin properties of your blob storage module are set.
+ * In the **.env** file update the _MY_STORAGE_ACCOUNT_NAME_, _MY_STORAGE_ACCOUNT_KEY_ and _MY_STORAGE_CONNECTION_STRING_ entries with the details of your Azure Storage account details.
 
- * Change the **cloudStorageConnectionString** variable to your cloud storage connection where it has `"<insert cloud storage connection string here>"`. You can find the connection string on the portal in your storage account under the **Access Keys** tab.
-
- * Change the variable **LOCAL_STORAGE_ACCOUNT_NAME** to the container you created in your storage account during **phase one** (i.e. storagetestlocal).
-
- * Change the variable **LOCAL_STORAGE_ACCOUNT_KEY** to your generated local storage account key. You can use this generator [here](https://generate.plus/en/base64?gp_base64_base%5Blength%5D=64).
+ * You can find the _Storage account name_, _access key_ and _Connection string_ on the Azure portal in your storage account under the **Access Keys** tab.
 
  * In the InferenceModule directory, in main.py adjust the variable **block_blob_service** to hold the connection string to the local blob storage account. You can find information about configuring connection strings [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#create-a-connection-string-for-an-explicit-storage-endpoint) or just replace the given `< >` with what is required.
 
