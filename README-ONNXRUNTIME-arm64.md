@@ -200,14 +200,19 @@ If you completed phases one and two, you should have the following dependencies 
 
 * In the command palette, enter and run the command **Azure: Sign in** and follow the instructions to sign into your Azure account.
 
-* Open the **.env** file and replace it with the credentials of the container registry that was set up in **phase one**. To find these credentials, go to your Azure Portal. Go to **Your resource group > Your container registry > Access keys**.
+* Open the **.env** file and edit the variables with the credentials of the container registry and storage account that was set up in [**phase one**](./README-Setup.md). You can find the details in your Azure Portal:
+    * The container registry credentials are in **Your resource group > Your container registry > Access keys**.
+    * The storage account details are on the **Access Keys** tab of the Storage account page.
 
-* Note the **Username** and **Login server**. Enable **Admin User**; this should generate two passwords. The first password is the one you need to note. Fill in the **.env** file so that it now looks something like this:
+* Note the **Username** and **Login server**. Enable **Admin User**; this should generate two passwords. The first password is the one you need to note. Fill in the **.env** file so that it has the following entries filled with your specific resources:
 
 ```
 CONTAINER_REGISTRY_USERNAME="<username>"
 CONTAINER_REGISTRY_PASSWORD="<password>"
 CONTAINER_REGISTRY_ADDRESS="<Login server>"
+MY_STORAGE_ACCOUNT_NAME="<Storage account name>"
+MY_STORAGE_ACCOUNT_KEY="<access key>"
+MY_STORAGE_CONNECTION_STRING="<Connection string>"
 ```
 
 * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
