@@ -2,8 +2,7 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
-# replace this image with the full path to the ONNX Runtime + OpenVINO base image
-FROM mcr.microsoft.com/azureml/onnxruntime:v0.4.0
+FROM mcr.microsoft.com/azureml/onnxruntime:latest-openvino-myriad
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -12,11 +11,11 @@ WORKDIR /app
 RUN apt-get update && \
     apt-get install libssl-dev libffi-dev python3-pip --yes
 
-RUN pip3 install --upgrade pip
+RUN pip install --upgrade pip
  
-RUN pip3 install azure-storage && \
-    pip3 install flask && \
-    pip3 install pytz
+RUN pip install azure-storage && \
+    pip install flask && \
+    pip install pytz
 
 # Expose the port
 EXPOSE 5000
@@ -26,4 +25,4 @@ COPY inference.py .
 COPY main.py .
 COPY labels.txt .
 
-ENTRYPOINT [ "python3", "-u", "./main.py" ]
+ENTRYPOINT [ "python", "-u", "./main.py" ]
