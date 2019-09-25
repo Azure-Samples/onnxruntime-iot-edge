@@ -31,18 +31,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
     * In the command palette, enter and run the command **Azure: Sign in** and follow the instructions to sign into your Azure account.
 
-    * Open the **.env** file and replace _username_, _password_ and _login server_ with the credentials of the container registry that was set up in [this](./README-Setup.md#create-a-container-registry) step.
-
-    * Fill in the **.env** file so that it now looks something like this:
-
-    ```
-    CONTAINER_REGISTRY_USERNAME="<_username_>"
-    CONTAINER_REGISTRY_PASSWORD="<_password_>"
-    CONTAINER_REGISTRY_ADDRESS="<_Login server_>"
-    MY_STORAGE_ACCOUNT_NAME="<Storage account name>"
-    MY_STORAGE_ACCOUNT_KEY="<access key>"
-    MY_STORAGE_CONNECTION_STRING="<Connection string>"
-    ```
+    * Open the **.env** file and replace _username_, _password_ and _login server_ for the _CONTAINER_REGISTRY_ variables with the credentials of the container registry that was set up in [this](./README-Setup.md#create-a-container-registry) step.
 
     * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
 
@@ -57,7 +46,20 @@ This part focuses on deploying an object detection model on your IoT Edge device
  * In the InferenceModule directory, in main.py adjust the variable **block_blob_service** to hold the connection string to the local blob storage account. You can find information about configuring connection strings [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#create-a-connection-string-for-an-explicit-storage-endpoint) or just replace the given `< >` with what is required.
 
  * Run `sudo mkdir /home/storagedata` in the SSH terminal.
+ 
+ ----
+ 
+ After these steps the **.env** file should have the following variables with the appropriate values for your account:
 
+    ```
+    CONTAINER_REGISTRY_USERNAME="<username>"
+    CONTAINER_REGISTRY_PASSWORD="<password>"
+    CONTAINER_REGISTRY_ADDRESS="<Login server>"
+    MY_STORAGE_ACCOUNT_NAME="<Storage account name>"
+    MY_STORAGE_ACCOUNT_KEY="<access key>"
+    MY_STORAGE_CONNECTION_STRING="<Connection string>"
+    ```
+    
 #### Switch the VSCode configuration to amd64
 
  * In **.vscode/settings.json** replace _arm64_ with **amd64**.
