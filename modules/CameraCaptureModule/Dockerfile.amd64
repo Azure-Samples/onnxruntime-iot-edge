@@ -3,15 +3,15 @@
 # full license information.
 
 # replace this image with the full path to the ONNX Runtime + OpenVINO base image
-FROM mcr.microsoft.com/azureml/onnxruntime:v0.4.0
+FROM mcr.microsoft.com/azureml/onnxruntime:latest-openvino-myriad
 
 WORKDIR /app
 
 RUN apt-get update && \
     apt-get install python3-pip --yes
     
-RUN pip3 install requests && \
-    pip3 install pytz
+RUN pip install requests && \
+    pip install pytz
 
 COPY main_threaded.py .
 COPY camerainfo.csv .
@@ -19,4 +19,4 @@ COPY camerainfo.csv .
 # If you want to change the camera you are using edit the camerainfo.csv file and put <camera id or ip>,<camera location> for each camera
 # make sure you separate by a line for each one
 
-ENTRYPOINT [ "python3", "-u", "./main_threaded.py"]
+ENTRYPOINT [ "python", "-u", "./main_threaded.py"]
