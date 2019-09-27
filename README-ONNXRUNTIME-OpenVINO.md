@@ -6,9 +6,9 @@ By completing this tutorial, you will have a low-cost DIY solution for object de
 <p align="center"><img width="80%" src="images_for_readme/Header-openvino.png" /></p>
 
 
-[Setup Azure account and Visual Studio enviroment](./README-Setup.md) or [skip ahead](#get_started) if you already have the setup to work with Visual Studio and Azure services. 
+Phase One: [Setup Azure account and Visual Studio enviroment](./README-Setup.md) or skip to [Model deployment](#get_started) if you already have the setup to work with Visual Studio and Azure services. 
 
-### <a name="get_started"></a>Model deployment With ONXN Runtime + OpenVINO
+### <a name="get_started"></a>Phase Two: Model deployment With ONXN Runtime + OpenVINO
 
 This part focuses on deploying an object detection model on your IoT Edge device using a pretrained model from the ONNX model zoo.
 
