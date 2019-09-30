@@ -186,7 +186,7 @@
           "cloudStorageConnectionString": "$MY_STORAGE_CONNECTION_STRING",
           "storageContainersForUpload": {
             "localcontainer": {
-              "target": "storagetest"
+              "target": "$MY_STORAGE_ACCOUNT_NAME"
             }
           },
           "deleteAfterUpload": "true"
