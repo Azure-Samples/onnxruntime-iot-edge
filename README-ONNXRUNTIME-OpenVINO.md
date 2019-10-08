@@ -6,7 +6,24 @@ By completing this tutorial, you will have a low-cost DIY solution for object de
 <p align="center"><img width="80%" src="images_for_readme/Header-openvino.png" /></p>
 
 
-Phase One: [Setup Azure account and Visual Studio enviroment](./README-Setup.md) or skip to [Model deployment](#get_started) if you already have the setup to work with Visual Studio and Azure services. 
+[Setup Azure account and Visual Studio enviroment](./README-Setup.md) or skip to [Model deployment](#get_started) if you already have the setup to work with Visual Studio and Azure services. 
+
+### <a name="setup_UP2"></a>Phase One: Setup the UP<sup>2</sup> AI Vision Developer Kit
+
+This phase will help you to setup the UP<sup>2</sup> device for using with this tutorial. Equipment needed for this setup are:
+
+1. [UP<sup>2</sup> AI Vision Kit](https://up-shop.org/home/285-up-squared-ai-vision-x-developer-kit.html#/116-up_squared_ai_vision_x_developer_kit-version_b_w_myriad_x) (make sure that you are using the version B kit with Myriad X option)
+2. A USB mouse and USB keyboard
+3. Ethernet (cat 6) cable or the [WiFI Kit for the UP<sup>2</sup>](https://up-shop.org/up-peripherals/239-m2-2230-wifi-kit-2t2r-for-up-squared-metal-chassis.html)
+4. A monitor with HDMI or Display Port (DP) interface
+
+Configure the Neural Compute Stick in the UP</sup>2</sup> device using [these steps](https://docs.openvinotoolkit.org/2019_R1.1/_docs_install_guides_installing_openvino_linux.html#additional-NCS-steps).
+    
+    sudo usermod -a -G users "$(whoami)"
+    sudo cp /opt/intel/openvino/inference_engine/external/97-myriad-usbboot.rules /etc/udev/rules.d/
+    sudo udevadm control --reload-rules
+    sudo udevadm trigger
+    sudo ldconfig
 
 ### <a name="get_started"></a>Phase Two: Model deployment With ONXN Runtime + OpenVINO
 
