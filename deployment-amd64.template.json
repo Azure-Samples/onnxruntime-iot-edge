@@ -51,13 +51,7 @@
             "restartPolicy": "always",
             "settings": {
               "image": "${MODULES.InferenceModule}",
-              "createOptions": {
-                "HostConfig": {
-                  "PortBindings": {},
-                  "NetworkMode": "Host",
-                  "IpcMode": "host",
-                  "Priviledged": true
-                }
+              "createOptions": "{\"HostConfig\":{\"Binds\":[\"/tmp/.X11-unix:/tmp/.X11-unix\",\"/dev:/dev\"],\"NetworkMode\":\"host\",\"IpcMode\":\"host\",\"Privileged\":true},\"NetworkingConfig\":{\"EndpointsConfig\":{\"host\":{}}},\"Env\":[\"DISPLAY=:0\"]}"
               }
             }
           },
@@ -151,5 +145,4 @@
         }
       }
     }
-  }
 }
