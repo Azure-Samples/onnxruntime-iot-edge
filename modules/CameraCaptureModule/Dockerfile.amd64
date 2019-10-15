@@ -2,7 +2,6 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
-# replace this image with the full path to the ONNX Runtime + OpenVINO base image
 FROM mcr.microsoft.com/azureml/onnxruntime:latest-openvino-myriad
 
 WORKDIR /app
@@ -11,7 +10,7 @@ RUN apt-get update && \
     apt-get install python3-pip --yes
     
 RUN pip install requests && \
-    pip install pytz
+    pip install pytz opencv-python
 
 COPY main_threaded.py .
 COPY camerainfo.csv .
