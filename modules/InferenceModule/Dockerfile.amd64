@@ -15,7 +15,7 @@ RUN pip install --upgrade pip
  
 RUN pip install azure-storage && \
     pip install flask opencv-python && \
-    pip install pytz defusedxml networkx
+    pip install pytz defusedxml networkx==2.3
 
 # Expose the port
 EXPOSE 5000
