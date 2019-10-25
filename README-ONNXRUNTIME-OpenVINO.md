@@ -61,6 +61,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
     CONTAINER_REGISTRY_ADDRESS="<_Login server_>"
     MY_STORAGE_ACCOUNT_NAME="<_Storage account name_>"
     MY_STORAGE_ACCOUNT_KEY="<_access key_>"
+    MY_STORAGE_CONNECTION_STRING="<_storage connection string_>"
     ```
 
     * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
