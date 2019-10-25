@@ -25,6 +25,8 @@ Configure the Neural Compute Stick in the UP</sup>2</sup> device using [these st
     sudo udevadm trigger
     sudo ldconfig
 
+To display the inference output on the local display, add __xhost +__ to the `/home/$user/.profile` file.
+
 ### <a name="get_started"></a>Phase Two: Model deployment With ONXN Runtime + OpenVINO
 
 This part focuses on deploying an object detection model on your IoT Edge device using a pretrained model from the ONNX model zoo.
