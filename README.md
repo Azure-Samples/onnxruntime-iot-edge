@@ -18,7 +18,7 @@ In simple terms, developers no longer need to worry about the nuances of hardwar
 
 **[ONNX Runtime with OpenVINO](./README-ONNXRUNTIME-OpenVINO.md)** is the tutorial examle for dpeloying pre-trained ONNX models with ONNX Runtime using the OpenVINO SDK for acceleration of the model.
 
-**[ONNX Runtime with Azure Machine Learning](./AzureML-OpenVINO/Readme.md)** is the example using Azure Machine Learning Service to deploy the model to an IoT Edge Device.
+**[ONNX Runtime with Azure Machine Learning](./AzureML-OpenVINO/README.md)** is the example using Azure Machine Learning Service to deploy the model to an IoT Edge Device.
 
 #### Contribution
 
