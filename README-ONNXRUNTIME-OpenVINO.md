@@ -25,6 +25,10 @@ Configure the Neural Compute Stick in the UP</sup>2</sup> device using [these st
     sudo udevadm trigger
     sudo ldconfig
 
+To display the inference output on the local display, add __xhost +__ to the `/home/$user/.profile` file.
+
+Confirm that the webcam is connected to one of the USB ports. Default for the first camera is `/dev/video0`. Confirm that the file `./CameraCaptureModule/camerainfo.csv` has the entry for the device.
+
 ### <a name="get_started"></a>Phase Two: Model deployment With ONXN Runtime + OpenVINO
 
 This part focuses on deploying an object detection model on your IoT Edge device using a pretrained model from the ONNX model zoo.
@@ -59,6 +63,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
     CONTAINER_REGISTRY_ADDRESS="<_Login server_>"
     MY_STORAGE_ACCOUNT_NAME="<_Storage account name_>"
     MY_STORAGE_ACCOUNT_KEY="<_access key_>"
+    MY_STORAGE_CONNECTION_STRING="<_storage connection string_>"
     ```
 
     * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
