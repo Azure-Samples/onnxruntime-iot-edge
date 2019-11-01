@@ -4,7 +4,7 @@ This tutorial uses a single container to deploy the TinyYolo model on the Intel 
 
 <p align="center"><img width="100%" src="https://github.com/manashgoswami/byoc/raw/master/ONNXRuntime-AML.png" /></p>
 
-In this example a sample container is built using the Azure Macnhine Learning Service.
+In this example a sample container is built using the Azure Machine Learning Service.
 
 ## Setup Steps
 
