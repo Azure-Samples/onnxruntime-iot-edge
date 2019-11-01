@@ -2,7 +2,7 @@
 
 This tutorial uses a single container to deploy the TinyYolo model on the Intel UP<sup>2</sup> device.
 
-<p align="center"><img width="50%" src="https://github.com/manashgoswami/byoc/raw/master/ONNXRuntime-AML.png" /></p>
+<p align="center"><img width="100%" src="https://github.com/manashgoswami/byoc/raw/master/ONNXRuntime-AML.png" /></p>
 
 In this example a sample container is built using the Azure Macnhine Learning Service.
 
@@ -41,4 +41,4 @@ From the Notebook VM launch the Jupyter web interface as descriped in step #3 ab
 You can use regular `git clone --recursive https://github.com/Azure-Samples/onnxruntime-iot-edge` command line commands to clone this repository into a desired folder.
 
 ## Get Started
-Open the notebook `AzureML-OpenVINO/AML-BYOC-ONNXRUNTIME-OpenVINO.ipynb` and start executin the 
+Open the notebook `AzureML-OpenVINO/AML-BYOC-ONNXRUNTIME-OpenVINO.ipynb` and start executing the cells. 
