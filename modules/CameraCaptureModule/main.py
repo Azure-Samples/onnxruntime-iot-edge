@@ -26,7 +26,7 @@ url = 'http://inferencemodule:5000'
 TIME_ZONE = timezone('US/Pacific')
 
 # Set delay so you don't have too many messages (in seconds)
-DELAY = 0.0
+DELAY = 1.0
 
 def camera_capture():
 	"""
