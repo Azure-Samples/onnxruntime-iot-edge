@@ -58,7 +58,7 @@ TIME_ZONE = timezone('US/Pacific')
 
 # This is a boolean marking whether to use cloud storage or not.
 # Change to true and follow tutorial instructions if you would like to use it.
-CLOUD_STORAGE = True
+CLOUD_STORAGE = False
 print("CLOUD STORAGE STATUS:", CLOUD_STORAGE)
 
 CONTAINER_NAME = 'localcontainer'
