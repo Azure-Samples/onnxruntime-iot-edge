@@ -4,7 +4,7 @@
   "image": {
     "repository": "$CONTAINER_REGISTRY_ADDRESS/inferencemodule",
     "tag": {
-      "version": "adaptiveobjectcountstable-1.0",
+      "version": "inferencestable-2.0",
       "platforms": {
         "arm64" : "./Dockerfile.arm64",
         "amd64" : "./Dockerfile.amd64"
