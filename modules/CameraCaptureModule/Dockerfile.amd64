@@ -12,10 +12,11 @@ RUN apt-get update && \
 RUN pip install requests && \
     pip install pytz opencv-python
 
-COPY main_threaded.py .
+# COPY main_threaded.py .
+COPY main.py .
 COPY camerainfo.csv .
 
 # If you want to change the camera you are using edit the camerainfo.csv file and put <camera id or ip>,<camera location> for each camera
 # make sure you separate by a line for each one
 
-ENTRYPOINT [ "python", "-u", "./main_threaded.py"]
+ENTRYPOINT [ "python", "-u", "./main.py"]
