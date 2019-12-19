@@ -4,7 +4,7 @@
   "image": {
     "repository": "$CONTAINER_REGISTRY_ADDRESS/cameracapturemodule",
     "tag": {
-      "version": "camerathreadedcapturestable",
+      "version": "cameracapturestable-2.0",
       "platforms": {
         "arm64" : "./Dockerfile.arm64",
         "amd64" : "./Dockerfile.amd64"
