@@ -13,7 +13,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'wopaulionnx'
+    azureResourceManagerConnection: 'wopauliarm'
     subscriptionId: 'a6c2a7cc-d67e-4a1a-b765-983f08c0423a'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'wopauliseekeredge_rg'
