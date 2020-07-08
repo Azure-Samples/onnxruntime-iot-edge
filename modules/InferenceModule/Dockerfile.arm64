@@ -2,7 +2,8 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
-FROM mcr.microsoft.com/azureml/onnxruntime:v0.5.0-tensorrt-l4t-r32.2
+FROM wopaulionnx.azurecr.io/onnxruntime:latest
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
