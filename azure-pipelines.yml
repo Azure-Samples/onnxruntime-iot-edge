@@ -10,11 +10,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: qetza.replacetokens.replacetokens-task.replacetokens@3
-  displayName: 'Replace tokens in deployment.template.json'
-  inputs:
-    rootDirectory: EdgeSolution
-    targetFiles: deployment.template.json
+# - task: qetza.replacetokens.replacetokens-task.replacetokens@3
+#   displayName: 'Replace tokens in deployment.template.json'
+#   inputs:
+#     rootDirectory: EdgeSolution
+#     targetFiles: deployment.template.json
 
 - task: AzureIoTEdge@2
   displayName: 'Azure IoT Edge - Build module images'
