@@ -2,7 +2,8 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
-FROM mcr.microsoft.com/azureml/onnxruntime:latest-openvino-myriad
+# FROM mcr.microsoft.com/azureml/onnxruntime:latest-openvino-myriad
+FROM wopaulionnx.azurecr.io/onnxruntime:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
