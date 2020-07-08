@@ -10,16 +10,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: AzureResourceManagerTemplateDeployment@3
+- task: qetza.replacetokens.replacetokens-task.replacetokens@3
+  displayName: 'Replace tokens in deployment.template.json'
   inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'wopauliarm'
-    subscriptionId: 'a6c2a7cc-d67e-4a1a-b765-983f08c0423a'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 'wopauliseekeredge_rg'
-    # location: '<your-closest-location>'
-    templateLocation: 'Linked artifact'
-    csmFile: '$(Build.ArtifactStagingDirectory)/deployment.template.json'
-    # csmParametersFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.parameters.json'
-    # overrideParameters: '-siteName $(siteName) -administratorLogin $(adminUser) -administratorLoginPassword $(ARM_PASS)'
-    deploymentMode: 'Incremental'
+    rootDirectory: EdgeSolution
+    targetFiles: deployment.template.json
+
+- task: AzureIoTEdge@2
+  displayName: 'Azure IoT Edge - Build module images'
+  inputs:
+    deploymentid: 'azuredevops-deployment'
+    templateFilePath: deployment.template.json
+  
