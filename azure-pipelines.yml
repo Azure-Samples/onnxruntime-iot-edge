@@ -21,11 +21,24 @@ steps:
   inputs:
     # rootDirectory: EdgeSolution
     targetFiles: deployment.template.json
+
+- task: qetza.replacetokens.replacetokens-task.replacetokens@3
+  displayName: 'Replace tokens in deployment.template.json'
+  inputs:
+    # rootDirectory: EdgeSolution
+    targetFiles: modules/PostProcessingModule/module.json
+
 - task: qetza.replacetokens.replacetokens-task.replacetokens@3
   displayName: 'Replace tokens in deployment.template.json'
   inputs:
     # rootDirectory: EdgeSolution
     targetFiles: modules/InferenceModule/module.json
+
+- task: qetza.replacetokens.replacetokens-task.replacetokens@3
+  displayName: 'Replace tokens in deployment.template.json'
+  inputs:
+    # rootDirectory: EdgeSolution
+    targetFiles: modules/CameraCaptureModule/module.json
 
 - task: AzureIoTEdge@2
   displayName: 'Azure IoT Edge - Build module images'
