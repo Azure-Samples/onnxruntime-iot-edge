@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: '<your-resource-manager-connection>'
+    subscriptionId: 'a6c2a7cc-d67e-4a1a-b765-983f08c0423a'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'wopauliseekeredge_rg'
+    # location: '<your-closest-location>'
+    templateLocation: 'Linked artifact'
+    csmFile: '$(Build.ArtifactStagingDirectory)/deployment.template.json'
+    # csmParametersFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.parameters.json'
+    # overrideParameters: '-siteName $(siteName) -administratorLogin $(adminUser) -administratorLoginPassword $(ARM_PASS)'
+    deploymentMode: 'Incremental'
