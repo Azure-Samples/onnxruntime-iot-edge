@@ -11,7 +11,6 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '4d03147f-578c-4294-a3b4-78a5db2210ce'
-  imageRepository: 'cameracapturemodule'
   containerRegistry: 'wopaulionnx.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/modules/CameraCaptureModule/Dockerfile.amd64'
   tag: '$(Build.BuildId)'
@@ -32,8 +31,8 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
+        repository: cameracapturemodule
+        dockerfile: '$(Build.SourcesDirectory)/modules/CameraCaptureModule/Dockerfile.amd64'
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
