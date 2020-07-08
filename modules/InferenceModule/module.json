@@ -6,8 +6,7 @@
     "tag": {
       "version": "adaptiveobjectcountstable-1.0",
       "platforms": {
-        "arm64" : "./Dockerfile.arm64",
-        "amd64" : "./Dockerfile.amd64"
+        "arm64" : "./Dockerfile.arm64"
       }
     },
     "buildOptions": []
