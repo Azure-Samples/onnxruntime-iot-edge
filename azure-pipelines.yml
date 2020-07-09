@@ -16,10 +16,6 @@ steps:
   inputs:
     script: 'docker login -u $(CONTAINER_REGISTRY_USERNAME) -p $(CONTAINER_REGISTRY_PASSWORD) $(CONTAINER_REGISTRY_ADDRESS)' 
 
-- task: CmdLine@2
-  inputs:
-    script: 'docker run --rm --privileged multiarch/qemu-user-static:register --reset'
-
 - task: qetza.replacetokens.replacetokens-task.replacetokens@3
   displayName: 'Replace tokens in deployment.template.json'
   inputs:
@@ -49,5 +45,5 @@ steps:
   inputs:
     deploymentid: 'azuredevops-deployment'
     templateFilePath: deployment.template.devops.json
-    defaultPlatform: 'arm64'
+    defaultPlatform: 'arm64v8'
   
