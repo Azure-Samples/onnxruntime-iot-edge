@@ -1,4 +1,4 @@
-# Copyright (c) Microsoft. All rights reserved.
+# Copyright (c) Microsoft. All rights reserved. 
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
@@ -8,8 +8,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
 
-RUN apt-get update && \
-RUN apt-get install libssl-dev libffi-dev --yes
+# RUN apt-get update && \
+# RUN apt-get install libssl-dev libffi-dev --yes
 
 RUN pip3 install --upgrade pip
  
