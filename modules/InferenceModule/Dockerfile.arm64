@@ -12,7 +12,7 @@ RUN apt-get update && \
 RUN apt-get install libssl-dev libffi-dev --yes
 
 RUN pip3 install --upgrade pip
- 
+
 RUN pip3 install azure-storage-blob && \
     pip3 install flask && \
     pip3 install pytz
