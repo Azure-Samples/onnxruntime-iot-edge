@@ -45,5 +45,5 @@ steps:
   inputs:
     deploymentid: 'azuredevops-deployment'
     templateFilePath: deployment.template.devops.json
-    defaultPlatform: 'arm64v8'
+    defaultPlatform: 'arm64'
   
