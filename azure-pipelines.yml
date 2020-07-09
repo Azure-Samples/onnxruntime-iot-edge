@@ -6,8 +6,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'jetson nano'
+pool: 'jetson nano'
 
 steps:
 # Command line
