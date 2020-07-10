@@ -58,7 +58,7 @@ steps:
   inputs:
     action: Push module images
     containerregistrytype: Azure Container Registry
-    azureSubscriptionEndpoint: $(AZURE_SUBSCRIPTION)
+    azureSubscriptionEndpoint: wopauliarm
     azureContainerRegistry: $(CONTAINER_REGISTRY_ADDRESS)
     templateFilePath: deployment.template.devops.json
     defaultPlatform: arm64
@@ -68,7 +68,7 @@ steps:
   inputs:
     action: 'Deploy to IoT Edge devices'
     deploymentFilePath: config/deployment.arm64.json
-    azureSubscription: wopauliarm
+    azureSubscription: $(AZURE_SUBSCRIPTION)
     iothubname: wopaulionnx
     deviceOption: 'Single Device'
     deviceId: edgeDevice
