@@ -18,29 +18,29 @@ steps:
   inputs:
     script: 'docker login -u $(CONTAINER_REGISTRY_USERNAME) -p $(CONTAINER_REGISTRY_PASSWORD) $(CONTAINER_REGISTRY_ADDRESS)' 
 
-- task: qetza.replacetokens.replacetokens-task.replacetokens@3
-  displayName: 'Replace tokens in deployment.template.json'
-  inputs:
-    # rootDirectory: EdgeSolution
-    targetFiles: deployment.template.json
+# - task: qetza.replacetokens.replacetokens-task.replacetokens@3
+#   displayName: 'Replace tokens in deployment.template.json'
+#   inputs:
+#     # rootDirectory: EdgeSolution
+#     targetFiles: deployment.template.json
 
-- task: qetza.replacetokens.replacetokens-task.replacetokens@3
-  displayName: 'Replace tokens in deployment.template.json'
-  inputs:
-    # rootDirectory: EdgeSolution
-    targetFiles: modules/PostProcessingModule/module.json
+# - task: qetza.replacetokens.replacetokens-task.replacetokens@3
+#   displayName: 'Replace tokens in deployment.template.json'
+#   inputs:
+#     # rootDirectory: EdgeSolution
+#     targetFiles: modules/PostProcessingModule/module.json
 
-- task: qetza.replacetokens.replacetokens-task.replacetokens@3
-  displayName: 'Replace tokens in deployment.template.json'
-  inputs:
-    # rootDirectory: EdgeSolution
-    targetFiles: modules/InferenceModule/module.json
+# - task: qetza.replacetokens.replacetokens-task.replacetokens@3
+#   displayName: 'Replace tokens in deployment.template.json'
+#   inputs:
+#     # rootDirectory: EdgeSolution
+#     targetFiles: modules/InferenceModule/module.json
 
-- task: qetza.replacetokens.replacetokens-task.replacetokens@3
-  displayName: 'Replace tokens in deployment.template.json'
-  inputs:
-    # rootDirectory: EdgeSolution
-    targetFiles: modules/CameraCaptureModule/module.json
+# - task: qetza.replacetokens.replacetokens-task.replacetokens@3
+#   displayName: 'Replace tokens in deployment.template.json'
+#   inputs:
+#     # rootDirectory: EdgeSolution
+#     targetFiles: modules/CameraCaptureModule/module.json
 
 # - task: AzureIoTEdge@2
 #   displayName: 'Azure IoT Edge - Build and Push IoT Edge Solution'
