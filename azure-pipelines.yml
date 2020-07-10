@@ -62,7 +62,7 @@ steps:
     containerregistrytype: 'Azure Container Registry'
     azureSubscriptionEndpoint: 'wopauliarm'
     azureContainerRegistry: '{"loginServer":"wopaulionnx.azurecr.io", "id" : "/subscriptions/a6c2a7cc-d67e-4a1a-b765-983f08c0423a/resourceGroups/wopauliseekeredge_rg/providers/Microsoft.ContainerRegistry/registries/wopaulionnx"}'
-    templateFilePath: 'deployment.template.json'
+    templateFilePath: 'deployment.template.devops.json'
     defaultPlatform: 'arm64'
     fillRegistryCredential: 'true'
 
