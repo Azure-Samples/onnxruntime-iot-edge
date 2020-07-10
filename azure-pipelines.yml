@@ -45,4 +45,6 @@ steps:
     deploymentid: 'azuredevops-deployment'
     templateFilePath: deployment.template.devops.json
     defaultPlatform: 'arm64'
-  
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
