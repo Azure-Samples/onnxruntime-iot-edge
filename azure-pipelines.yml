@@ -61,7 +61,7 @@ steps:
   inputs:
     action: Push module images
     containerregistrytype: Azure Container Registry
-    azureSubscriptionEndpoint: wopauliarm
+    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
     azureContainerRegistry: $(CONTAINER_REGISTRY_ADDRESS)
     templateFilePath: deployment.template.devops.json
     defaultPlatform: arm64
