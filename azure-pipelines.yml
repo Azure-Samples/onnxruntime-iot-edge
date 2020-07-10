@@ -54,17 +54,17 @@ steps:
   inputs:
     action: Build module images
     templateFilePath: deployment.template.devops.json
-    defaultPlatform: arm64  
+    defaultPlatform: arm64
 
 - task: AzureIoTEdge@2
-  displayName: AzureIoTEdge - Push module images
   inputs:
-    action: Push module images
-    containerregistrytype: Azure Container Registry
-    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
-    azureContainerRegistry: $(CONTAINER_REGISTRY_ADDRESS)
-    templateFilePath: deployment.template.devops.json
-    defaultPlatform: arm64
+    action: 'Push module images'
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscriptionEndpoint: 'wopauliarm'
+    azureContainerRegistry: '{"loginServer":"wopaulionnx.azurecr.io", "id" : "/subscriptions/a6c2a7cc-d67e-4a1a-b765-983f08c0423a/resourceGroups/wopauliseekeredge_rg/providers/Microsoft.ContainerRegistry/registries/wopaulionnx"}'
+    templateFilePath: 'deployment.template.json'
+    defaultPlatform: 'arm64'
+    fillRegistryCredential: 'true'
 
 - task: AzureIoTEdge@2
   displayName: 'Azure IoT Edge - Deploy to IoT Edge devices'
