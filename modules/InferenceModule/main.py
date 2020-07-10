@@ -42,7 +42,7 @@ for i, val in enumerate(labels):
     label_lookup[val] = i
 
 # Loading ONNX model
-print("loading Tiny YOLO...")
+print("loading Tiny YOLO ...")
 start_time = time.time()
 sess = rt.InferenceSession("TinyYOLO.onnx")
 print("loaded after", time.time() - start_time, "s")
