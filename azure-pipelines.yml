@@ -68,7 +68,7 @@ steps:
   inputs:
     action: 'Deploy to IoT Edge devices'
     deploymentFilePath: config/deployment.arm64.json
-    azureSubscription: $(AZURE_SUBSCRIPTION)
+    azureSubscription: wopauliarm
     iothubname: wopaulionnx
     deviceOption: 'Single Device'
     deviceId: edgeDevice
