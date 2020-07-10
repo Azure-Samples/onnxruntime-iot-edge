@@ -53,7 +53,7 @@ steps:
   displayName: AzureIoTEdge - Build module images
   inputs:
     action: Build module images
-    templateFilePath: deployment.template.devops.json
+    templateFilePath: deployment.template.json
     defaultPlatform: arm64
 
 - task: AzureIoTEdge@2
@@ -62,7 +62,7 @@ steps:
     containerregistrytype: 'Azure Container Registry'
     azureSubscriptionEndpoint: 'wopauliarm'
     azureContainerRegistry: '{"loginServer":"wopaulionnx.azurecr.io", "id" : "/subscriptions/a6c2a7cc-d67e-4a1a-b765-983f08c0423a/resourceGroups/wopauliseekeredge_rg/providers/Microsoft.ContainerRegistry/registries/wopaulionnx"}'
-    templateFilePath: 'deployment.template.devops.json'
+    templateFilePath: 'deployment.template.json'
     defaultPlatform: 'arm64'
     fillRegistryCredential: 'true'
 
