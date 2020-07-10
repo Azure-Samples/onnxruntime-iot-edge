@@ -63,7 +63,6 @@ steps:
     templateFilePath: deployment.template.devops.json
     defaultPlatform: arm64
 
-steps:
 - task: AzureIoTEdge@2
   displayName: 'Azure IoT Edge - Deploy to IoT Edge devices'
   inputs:
