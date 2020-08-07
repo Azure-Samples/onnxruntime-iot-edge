@@ -1,9 +1,12 @@
 <p align="center"><img width="80%" src="images_for_readme/Header.jpg" alt="Integrate Azure with Machine Learning execution on ARM64 Devices"/></p>
 
-## Integrate Azure with machine learning execution on the Jetson Nano (an ARM64 device)
+## Integrate Azure with machine learning execution on the NVIDIA Jetson platform (an ARM64 device)
 
-In this tutorial you will learn how to integrate Azure services with machine learning on the NVIDIA Jetson Nano (an ARM64 device) using Python. By the end of this sample, you will have a low-cost DIY solution for object detection within a space and a unique understanding of integrating ARM64 platform with Azure IoT services and machine learning.
+In this tutorial you will learn how to integrate Azure services with machine learning on the NVIDIA Jetson device (an ARM64 hardware platform) using Python. By the end of this sample, you will have a low-cost DIY solution for object detection within a space and a unique understanding of integrating ARM64 platform with Azure IoT services and machine learning.
 <p align="center"><img width="100%" src="images_for_readme/arch.jpg" alt="The camera feed goes to the Jetson Nano which then sends the output to Azure"/></p>
+
+## IMPORTANT NOTE about Jetpack SDK releases
+This sample is intented to work with [release 32.4.3](https://docs.nvidia.com/jetson/jetpack/release-notes/) of the Jetpack SDK with the Linux Driver Package (L4T-r32.4.3). If your Jetpack version is 4.2.1 then change L#9 in the `module.json` of the respective modules to `Dockerfile-l4t-r32.2.arm64`.
 
 * [Phase One](./README-Setup.md) focuses on setting up the related services and environment.
 * [Phase Two](#p2) focuses on setting up the Jetson Nano to be ready for IoT Edge Development with Azure and ONNX Runtime.
@@ -205,6 +208,8 @@ If you completed phases one and two, you should have the following dependencies 
     * The storage account details are on the **Access Keys** tab of the Storage account page.
 
 * Note the **Username** and **Login server**. Enable **Admin User**; this should generate two passwords. The first password is the one you need to note. Fill in the **.env** file so that it has the following entries filled with your specific resources:
+
+* Set default platform in VS Code: **View > Command Palette** `Azure IoT Edge: Set Default Target Platform for Edge Solution` select _arm64v8_
 
 ```
 CONTAINER_REGISTRY_USERNAME="<username>"
