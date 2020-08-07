@@ -47,6 +47,7 @@ print("loaded after", time.time() - start_time, "s")
 IOTHUB_CONNECTION_STRING = "{Primary Connection String}"
 BLOB_STORAGE_CONNECTION_STRING = "{Blob Storage Connection String}"
 
+
 # Path to CSV FILE (edit if you want)
 LATEST_FULL_PATH = "/home/storagedata/objectcountlatest.csv"
 DAILY_FULL_DIR = "/home/storagedata/"
@@ -77,6 +78,7 @@ if CLOUD_STORAGE:
         pass
     blob_client = block_blob_service.get_blob_client(container=CONTAINER_NAME, blob=DAILY_CSV_NAME)
     blob_client.upload_blob(DAILY_STRING, overwrite=True)
+
 
 
 class HubManager(object):
@@ -133,11 +135,11 @@ has_changed = {}
 
 @app.route("/", methods=["POST"])
 def frame_handler():
-    """ 
+    """
     Handles incoming post requests. Gets frame from request and calls inferencing function on frame.
     Sends result to IOT Hub.
     """
-
+    
     try:
         global current_date
         global DAILY_STRING
@@ -201,6 +203,7 @@ def get_tinyyolo_frame_from_encode(msg):
     """
     Formats jpeg encoded msg to frame that can be processed by tiny_yolov2
     """
+    
     inp = np.array(msg).reshape((len(msg), 1))
     frame = cv2.imdecode(inp.astype(np.uint8), 1)
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
