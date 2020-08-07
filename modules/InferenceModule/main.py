@@ -44,8 +44,8 @@ start_time = time.time()
 sess = rt.InferenceSession("TinyYOLO.onnx")
 print("loaded after", time.time() - start_time, "s")
 
-IOTHUB_CONNECTION_STRING = "HostName=onnxruntime-iot-manash.azure-devices.net;DeviceId=Brockton-NX;SharedAccessKey=WoVegkzONuMmzvjCxuLPHJkNDtHPOqqxrCyp6UETCOI="
-BLOB_STORAGE_CONNECTION_STRING = "azureml-blobstore-32dadd23-cd49-4c8d-b096-b7db4e0996aa"
+IOTHUB_CONNECTION_STRING = "{Primary Connection String}"
+BLOB_STORAGE_CONNECTION_STRING = "{Blob Storage Connection String}"
 
 # Path to CSV FILE (edit if you want)
 LATEST_FULL_PATH = "/home/storagedata/objectcountlatest.csv"
