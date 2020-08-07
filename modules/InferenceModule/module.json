@@ -4,9 +4,9 @@
   "image": {
     "repository": "$CONTAINER_REGISTRY_ADDRESS/inferencemodule",
     "tag": {
-      "version": "inferencestable-2.0",
+      "version": "inferencestable-1.0",
       "platforms": {
-        "arm64" : "./Dockerfile.arm64",
+        "arm64v8" : "./Dockerfile.arm64",
         "amd64" : "./Dockerfile.amd64"
       }
     },
