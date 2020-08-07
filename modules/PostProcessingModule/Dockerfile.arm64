@@ -2,7 +2,18 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
-FROM mcr.microsoft.com/azureml/onnxruntime:v0.5.0-tensorrt-l4t-r32.2
+# This dockerfile is compatible with Jetpack 4.4 SDK l4t-base-r32.4.3
+FROM mcr.microsoft.com/azureml/onnxruntime:v.1.4.0-jetpack4.4-l4t-base-r32.4.3
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN pip3 install --upgrade pip
+
+# install the IoT Edge packages
+RUN pip3 install azure-iot-hub \
+    azure-iot-device \
+    azure-iothub-provisioningserviceclient \
+    azure-storage-blob
 
 WORKDIR /app
 
