@@ -58,7 +58,7 @@
                     "/usr/lib/aarch64-linux-gnu/:/usr/lib/aarch64-linux-gnu-override/",
                     "/usr/lib/aarch64-linux-gnu/tegra:/usr/lib/aarch64-linux-gnu-override/tegra",
                     "/usr/local/cuda:/usr/local/cuda",
-                    "/usr/local/cuda-10.0:/usr/local/cuda-10.0",
+                    "/usr/local/cuda-10.2:/usr/local/cuda-10.2",
                     "/dev:/dev"
                   ],
                   "NetworkMode": "Host",
@@ -100,17 +100,6 @@
                     }
                   ]
                 }
-              }
-            }
-          },
-          "PostProcessingModule": {
-            "version": "1.0",
-            "type": "docker",
-            "status": "running",
-            "restartPolicy": "always",
-            "settings": {
-              "image": "${MODULES.PostProcessingModule}",
-              "createOptions": {
               }
             }
           },
