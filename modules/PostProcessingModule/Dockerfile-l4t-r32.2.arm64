@@ -1,0 +1,21 @@
+# Copyright (c) Microsoft. All rights reserved.
+# Licensed under the MIT license. See LICENSE file in the project root for
+# full license information.
+
+FROM mcr.microsoft.com/azureml/onnxruntime:v0.5.0-tensorrt-l4t-r32.2
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN pip3 install --upgrade pip
+
+# install the IoT Edge packages
+RUN pip3 install azure-iot-hub \
+    azure-iot-device \
+    azure-iothub-provisioningserviceclient \
+    azure-storage-blob
+
+WORKDIR /app
+
+COPY main.py .
+
+ENTRYPOINT [ "python3", "-u", "./main.py" ]
