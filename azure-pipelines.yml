@@ -12,8 +12,11 @@ variables:
   azureSubscriptionEndpoint: wopauliarm
 
 steps:
-# Command line
-# Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+- task: CmdLine@2
+  displayName: "Get System.DefaultWorkingDirectory"
+  inputs:
+    script: echo $(System.DefaultWorkingDirectory)
+
 - task: CmdLine@2
   inputs:
     script: 'docker login -u $(CONTAINER_REGISTRY_USERNAME) -p $(CONTAINER_REGISTRY_PASSWORD) $(CONTAINER_REGISTRY_ADDRESS)' 
