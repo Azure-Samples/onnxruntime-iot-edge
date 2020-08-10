@@ -2,7 +2,7 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
-FROM wopaulionnx.azurecr.io/onnxruntime:latest
+FROM manashonnxruntime.azurecr.io/onnxruntime-jetson:v2
 
 ENV DEBIAN_FRONTEND=noninteractive
 

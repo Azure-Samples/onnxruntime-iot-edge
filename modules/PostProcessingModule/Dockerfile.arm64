@@ -2,7 +2,7 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
-FROM mcr.microsoft.com/azureml/onnxruntime:v0.5.0-tensorrt-l4t-r32.2
+FROM manashonnxruntime.azurecr.io/onnxruntime-jetson:v2
 
 WORKDIR /app
 
