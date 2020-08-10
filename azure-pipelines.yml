@@ -38,7 +38,7 @@ steps:
   displayName: 'AzureIoTEdge - Deploy to IoT Edge devices'
   inputs:
     action: Create deployment for single device
-    deploymentFilePath: $(System.DefaultWorkingDirectory)/config/deployment.arm64.json
+    deploymentFilePath: $(System.DefaultWorkingDirectory)/config/deployment.arm64sdfsdf.json
     azureSubscription: wopauliarm
     iothubname: wopaulionnx
     deviceOption: 'Single Device'
