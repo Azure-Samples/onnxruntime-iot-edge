@@ -70,7 +70,7 @@ This part focuses on deploying an object detection model on your IoT Edge device
 
 #### Cloud storage
 
- * Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False**.
+ * Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False** in L#61.
 
  * In the **.env** file update the _MY_STORAGE_ACCOUNT_NAME_, _MY_STORAGE_ACCOUNT_KEY_ and _MY_STORAGE_CONNECTION_STRING_ entries with the details of your Azure Storage account details.
 

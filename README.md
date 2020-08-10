@@ -14,11 +14,11 @@ This tutorial is a reference implementation for executing ONNX models across dif
 
 In simple terms, developers no longer need to worry about the nuances of hardware specific custom libraries to accelerate their machine learning models. This tutorial demonstrates that by enabling the same code to run on different HW platforms using their respecitive AI acceleration libraries for optimized execution of the ONNX model.
 
-**[ONNX Runtime with TensortRT on Jetson Nano](./README-ONNXRUNTIME-arm64.md)** is the tutorial example for deploying pre-trained ONNX models on the NVIDIA Jetson Nano using Azure IoT Edge.
+**[ONNX Runtime on NVIDIA Jetson Platform](./README-ONNXRUNTIME-arm64.md)** is the tutorial example for deploying pre-trained ONNX models on the NVIDIA Jetson Nano using Azure IoT Edge.
 
-**[ONNX Runtime with OpenVINO](./README-ONNXRUNTIME-OpenVINO.md)** is the tutorial examle for dpeloying pre-trained ONNX models with ONNX Runtime using the OpenVINO SDK for acceleration of the model.
+**[ONNX Runtime with Intel OpenVINO](./README-ONNXRUNTIME-OpenVINO.md)** is the tutorial examle for dpeloying pre-trained ONNX models with ONNX Runtime using the OpenVINO SDK for acceleration of the model.
 
-**[ONNX Runtime with Azure Machine Learning](./AzureML-OpenVINO/README.md)** is the example using Azure Machine Learning Service to deploy the model to an IoT Edge Device.
+**[Using ONNX Runtime with Azure Machine Learning](./AzureML-OpenVINO/README.md)** is the example using Azure Machine Learning Service to deploy the model to an IoT Edge Device.
 
 #### Contribution
 
