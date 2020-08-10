@@ -43,4 +43,4 @@ steps:
     azureSubscription: $(AZURE_SUBSCRIPTION)
     iothubname: wopaulionnx
     deviceOption: 'Single Device'
-    deviceId: edgeDevice
+    deviceId: manashJetsonNX
