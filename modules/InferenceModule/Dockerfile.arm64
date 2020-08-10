@@ -2,20 +2,24 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
-FROM manashonnxruntime.azurecr.io/onnxruntime-jetson:v2
+FROM mcr.microsoft.com/azureml/onnxruntime:v.1.4.0-jetpack4.4-l4t-base-r32.4.3
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-WORKDIR /app
+# RUN apt-get update && \
+#     apt-get install -y --no-install-recommends libffi-dev python-dev
 
-RUN apt-get update && \
-    apt-get install libssl-dev libffi-dev --yes
+WORKDIR /app
 
 RUN pip3 install --upgrade pip
 
-RUN pip3 install azure-storage-blob && \
-    pip3 install flask && \
-    pip3 install pytz
+# install the IoT Edge packages
+RUN pip3 install azure-iot-hub \
+    azure-iot-device \
+    azure-iothub-provisioningserviceclient \
+    azure-storage-blob \
+    flask \
+    pytz
 
 # Expose the port
 EXPOSE 5000

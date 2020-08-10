@@ -2,8 +2,7 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
-# This dockerfile is compatible with Jetpack 4.4 SDK l4t-base-r32.4.3
-FROM mcr.microsoft.com/azureml/onnxruntime:v.1.4.0-jetpack4.4-l4t-base-r32.4.3
+FROM mcr.microsoft.com/azureml/onnxruntime:v0.5.0-tensorrt-l4t-r32.2
 
 ENV DEBIAN_FRONTEND=noninteractive
 

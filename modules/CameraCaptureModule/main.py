@@ -18,20 +18,21 @@ import csv
 url = 'http://inferencemodule:5000'
 
 # If you would like to change the port, you will need to modify:
-#	the url variable above (currently the code is using port 5000)
-# 	main.py in InferenceModule
-#	Dockerfile.arm64 in InferenceModule
+#   the url variable above (currently the code is using port 5000)
+#   Change the port number in the EXPOSE command in InferenceModule:
+#       L#20 in Dockerfile.arm64 and
+#       L#21 in Dockerfile.amd64
 
 # Set timezone for timestamping (Change if you are not in Pacific timezone)
 TIME_ZONE = timezone('US/Pacific')
 
 # Set delay so you don't have too many messages (in seconds)
-DELAY = 0.0
+DELAY = 10.0
 
 def camera_capture():
 	"""
 	Captures camera feed and sends it to http server in InferenceModule.
-    """
+	"""
 	
 	cameras = []
 	locations = []
@@ -65,6 +66,10 @@ def camera_capture():
 					location = locations[i]
 					camera = cameras[i]
 					ret, frame = cap.read()
+					if not ret:
+						print('no video RESETTING FRAMES TO 0 TO RUN IN LOOP')
+						cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+						continue
 					ts = datetime.now(TIME_ZONE)
 					timestring = ts.strftime("%Y-%m-%d %H:%M:%S")
 					print(timestring)
@@ -74,9 +79,11 @@ def camera_capture():
 					output[camera+":location"] = location
 					output[camera+':timestamp'] = timestring
 
-				#SEND FRAMES/TIMESTAMPS/LOCATIONS FOR EACH CAMERA
+				print("SEND FRAMES/TIMESTAMPS/LOCATIONS FOR EACH CAMERA")
 				try: 
 					headers = {'Content-Type': 'application/json'}
+					print("URL:", url)
+					print("HEADER:", headers)
 					response = requests.post(url, headers=headers, data=json.dumps(output))
 					print(response.text)
 					print("PERF TIME FOR", len(cameras),"IS", (time.time()-total_perf_time), "s")
