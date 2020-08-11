@@ -54,8 +54,8 @@
               "createOptions": {
                 "HostConfig": {
                   "Env": [
-                    "MY_IOTHUB_CONNECTION_STRING=$MY_IOTHUB_CONNECTION_STRING",
-                    "MY_BLOB_STORAGE_CONNECTION_STRING=$MY_BLOB_STORAGE_CONNECTION_STRING"
+                    "IOTHUB_CONNECTION_STRING=$MY_IOTHUB_CONNECTION_STRING",
+                    "BLOB_STORAGE_CONNECTION_STRING=$MY_BLOB_STORAGE_CONNECTION_STRING"
                   ],
                   "PortBindings": {},
                   "Binds": [
