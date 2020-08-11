@@ -53,6 +53,10 @@
               "image": "${MODULES.InferenceModule}",
               "createOptions": {
                 "HostConfig": {
+                  "Env": {
+                    "MY_IOTHUB_CONNECTION_STRING": {
+                    "value": "$MY_IOTHUB_CONNECTION_STRING"
+                  },
                   "PortBindings": {},
                   "Binds": [
                     "/usr/lib/aarch64-linux-gnu/:/usr/lib/aarch64-linux-gnu-override/",

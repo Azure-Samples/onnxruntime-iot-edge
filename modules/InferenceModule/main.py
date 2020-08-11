@@ -44,7 +44,7 @@ start_time = time.time()
 sess = rt.InferenceSession("TinyYOLO.onnx")
 print("loaded after", time.time() - start_time, "s")
 
-IOTHUB_CONNECTION_STRING = "{Primary Connection String}"
+IOTHUB_CONNECTION_STRING = os.getenv('MY_IOTHUB_CONNECTION_STRING')
 BLOB_STORAGE_CONNECTION_STRING = "{Blob Storage Connection String}"
 
 
