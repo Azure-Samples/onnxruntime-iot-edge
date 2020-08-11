@@ -103,22 +103,6 @@
               }
             }
           },
-          "PostProcessingModule": {
-            "version": "1.0",
-            "type": "docker",
-            "status": "running",
-            "restartPolicy": "always",
-            "settings": {
-              "image": "${MODULES.PostProcessingModule}",
-              "createOptions": {
-                "Env": {
-                  "my_iothub_connection_string": {
-                    "value": "$my_iothub_connection_string"
-                  }
-                }
-              }
-            }
-          },
           "CameraCaptureModule": {
             "version": "1.0",
             "type": "docker",
