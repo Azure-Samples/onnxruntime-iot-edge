@@ -16,7 +16,7 @@ from azure.iot.device import IoTHubMessageDispositionResult, IoTHubError
 MESSAGE_TIMEOUT = 10000
 
 # Set the CONNECTION_STRING from Azure Portal
-IOTHUB_CONNECTION_STRING = "{Primary Connection String}"
+IOTHUB_CONNECTION_STRING = "HostName=wopauliiothub.azure-devices.net;DeviceId=manashJetsonNX;SharedAccessKey=R3gbWjSKki6O/9NgU1fWVnnImrEvTJi/SurORDHjFkI="
 
 def send_confirmation_callback(message, result, user_context):
     """
