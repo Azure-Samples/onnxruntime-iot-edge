@@ -42,7 +42,10 @@ class HubManager(object):
         # set the time until a message times out
         self.client.set_option("messageTimeout", MESSAGE_TIMEOUT)
 
-        await self.connect()
+        self.connect()
+
+    async def connect(self):
+        await self.client.connect()
 
         # sets the callback when a message arrives on "postprocessinginput" queue.  Messages sent to 
         # other inputs or to the default will be silently discarded.
