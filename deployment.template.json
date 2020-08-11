@@ -51,13 +51,6 @@
             "restartPolicy": "always",
             "settings": {
               "image": "${MODULES.InferenceModule}",
-              "env": {
-                "IOTHUB_CONNECTION_STRING": {
-                    "value": "$MY_IOTHUB_CONNECTION_STRING"
-              },
-              "BLOB_STORAGE_CONNECTION_STRING": {
-                "value": "$MY_BLOB_STORAGE_CONNECTION_STRING"
-              }},
               "createOptions": {
                 "HostConfig": {
                   "PortBindings": {},
@@ -108,7 +101,14 @@
                   ]
                 }
               }
-            }
+            },
+            "env": {
+              "IOTHUB_CONNECTION_STRING": {
+                  "value": "$MY_IOTHUB_CONNECTION_STRING"
+            },
+            "BLOB_STORAGE_CONNECTION_STRING": {
+              "value": "$MY_BLOB_STORAGE_CONNECTION_STRING"
+            }}
           },
           "CameraCaptureModule": {
             "version": "1.0",
