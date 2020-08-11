@@ -45,7 +45,8 @@ sess = rt.InferenceSession("TinyYOLO.onnx")
 print("loaded after", time.time() - start_time, "s")
 
 IOTHUB_CONNECTION_STRING = os.getenv('MY_IOTHUB_CONNECTION_STRING')
-BLOB_STORAGE_CONNECTION_STRING = "{Blob Storage Connection String}"
+BLOB_STORAGE_CONNECTION_STRING = os.getenv('MY_BLOB_STORAGE_CONNECTION_STRING')
+# BLOB_STORAGE_CONNECTION_STRING = "{Blob Storage Connection String}"
 print("IOTHUB_CONNECTION_STRING", IOTHUB_CONNECTION_STRING)
 
 # Path to CSV FILE (edit if you want)

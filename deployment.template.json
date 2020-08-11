@@ -56,7 +56,11 @@
                   "Env": {
                     "MY_IOTHUB_CONNECTION_STRING": {
                     "value": "$MY_IOTHUB_CONNECTION_STRING"
-                  }},
+                    },
+                  "MY_BLOB_STORAGE_CONNECTION_STRING": {
+                    "value": "$MY_BLOB_STORAGE_CONNECTION_STRING"
+                  }
+                  },
                   "PortBindings": {},
                   "Binds": [
                     "/usr/lib/aarch64-linux-gnu/:/usr/lib/aarch64-linux-gnu-override/",
