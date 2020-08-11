@@ -12,10 +12,6 @@ variables:
   azureSubscriptionEndpoint: wopauliarm
 
 steps:
-# - task: CmdLine@2
-#   inputs:
-#     script: 'docker login -u $(CONTAINER_REGISTRY_USERNAME) -p $(CONTAINER_REGISTRY_PASSWORD) $(CONTAINER_REGISTRY_ADDRESS)' 
-
 - task: AzureIoTEdge@2
   displayName: AzureIoTEdge - Build module images
   inputs:
@@ -34,21 +30,10 @@ steps:
     defaultPlatform: 'arm64v8'
     fillRegistryCredential: 'true'
 
-# - task: AzureIoTEdge@2
-#   displayName: 'AzureIoTEdge - Deploy to IoT Edge devices'
-#   inputs:
-#     action: Create deployment for single device
-#     deploymentFilePath: $(System.DefaultWorkingDirectory)/config/deployment.arm64v8.json
-#     # deploymentFilePath: $(System.DefaultWorkingDirectory)deployment.arm64v8.json
-#     azureSubscription: wopauliarm
-#     iothubname: wopauliiothub
-#     deviceOption: 'Single Device'
-#     deviceId: manashJetsonNX
-
 - task: AzureIoTEdge@2
   displayName: 'Azure IoT Edge - Deploy to IoT Edge devices'
   inputs:
-    action: 'Deploy to IoT Edge devices'
+    action: 'Deploy to IoT Edge device'
     deploymentFilePath: '$(System.DefaultWorkingDirectory)/config/deployment.arm64v8.json'
     azureSubscription: wopauliarm
     iothubname: wopauliiothub
