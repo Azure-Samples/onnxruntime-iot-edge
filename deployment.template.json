@@ -45,18 +45,21 @@
         },
         "modules": {
           "inferencemodule": {
-            "version": "1.0.2",
+            "version": "1.0.3",
             "type": "docker",
             "status": "running",
             "restartPolicy": "always",
             "settings": {
               "image": "${MODULES.InferenceModule}",
+              "env": {
+                "IOTHUB_CONNECTION_STRING": {
+                    "value": "$MY_IOTHUB_CONNECTION_STRING"
+              },
+              "BLOB_STORAGE_CONNECTION_STRING": {
+                "value": "$MY_BLOB_STORAGE_CONNECTION_STRING"
+              }},
               "createOptions": {
                 "HostConfig": {
-                  "Env": [
-                    "IOTHUB_CONNECTION_STRING=$MY_IOTHUB_CONNECTION_STRING",
-                    "BLOB_STORAGE_CONNECTION_STRING=$MY_BLOB_STORAGE_CONNECTION_STRING"
-                  ],
                   "PortBindings": {},
                   "Binds": [
                     "/usr/lib/aarch64-linux-gnu/:/usr/lib/aarch64-linux-gnu-override/",
