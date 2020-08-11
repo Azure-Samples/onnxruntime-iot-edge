@@ -44,9 +44,10 @@ start_time = time.time()
 sess = rt.InferenceSession("TinyYOLO.onnx")
 print("loaded after", time.time() - start_time, "s")
 
-IOTHUB_CONNECTION_STRING = "{Primary Connection String}"
-BLOB_STORAGE_CONNECTION_STRING = "{Blob Storage Connection String}"
-
+IOTHUB_CONNECTION_STRING = os.getenv('IOTHUB_CONNECTION_STRING')
+BLOB_STORAGE_CONNECTION_STRING = os.getenv('BLOB_STORAGE_CONNECTION_STRING')
+print("IOTHUB_CONNECTION_STRING", IOTHUB_CONNECTION_STRING)
+print("BLOB_STORAGE_CONNECTION_STRING", BLOB_STORAGE_CONNECTION_STRING)
 
 # Path to CSV FILE (edit if you want)
 LATEST_FULL_PATH = "/home/storagedata/objectcountlatest.csv"
