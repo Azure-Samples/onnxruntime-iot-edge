@@ -112,8 +112,8 @@
               "image": "${MODULES.PostProcessingModule}",
               "createOptions": {
                 "Env": {
-                  "IOTHUB_CONNECTION_STRING": {
-                    "value": "$IOTHUB_CONNECTION_STRING"
+                  "my_iothub_connection_string": {
+                    "value": "$my_iothub_connection_string"
                   }
                 }
               }

@@ -17,7 +17,7 @@ from azure.iot.device import IoTHubMessageDispositionResult, IoTHubError
 MESSAGE_TIMEOUT = 10000
 
 # Set the CONNECTION_STRING from Azure Portal
-IOTHUB_CONNECTION_STRING = os.getenv('IOTHUB_CONNECTION_STRING')
+IOTHUB_CONNECTION_STRING = os.getenv('my_iothub_connection_string')
 print("IOTHUB_CONNECTION_STRING:", IOTHUB_CONNECTION_STRING)
 
 def send_confirmation_callback(message, result, user_context):
