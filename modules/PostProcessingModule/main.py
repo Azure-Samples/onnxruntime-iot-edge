@@ -2,6 +2,7 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
+import os
 import random
 import time
 import sys
@@ -16,7 +17,8 @@ from azure.iot.device import IoTHubMessageDispositionResult, IoTHubError
 MESSAGE_TIMEOUT = 10000
 
 # Set the CONNECTION_STRING from Azure Portal
-IOTHUB_CONNECTION_STRING = "{Primary Connection String}"
+IOTHUB_CONNECTION_STRING = os.getenv('IOTHUB_CONNECTION_STRING')
+print("IOTHUB_CONNECTION_STRING:", IOTHUB_CONNECTION_STRING)
 
 def send_confirmation_callback(message, result, user_context):
     """
