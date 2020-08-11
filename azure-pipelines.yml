@@ -40,6 +40,6 @@ steps:
     action: Create deployment for single device
     deploymentFilePath: $(System.DefaultWorkingDirectory)/config/deployment.arm64.json
     azureSubscription: wopauliarm
-    iothubname: wopaulionnx
+    iothubname: wopauliiothub
     deviceOption: 'Single Device'
     deviceId: manashJetsonNX
