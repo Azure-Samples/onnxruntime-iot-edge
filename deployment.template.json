@@ -111,9 +111,11 @@
             "settings": {
               "image": "${MODULES.PostProcessingModule}",
               "createOptions": {
-                "Env": [
-                  "IOTHUB_CONNECTION_STRING=$IOTHUB_CONNECTION_STRING"
-                ]
+                "Env": {
+                  "IOTHUB_CONNECTION_STRING": {
+                    "value": "$IOTHUB_CONNECTION_STRING"
+                  }
+                }
               }
             }
           },
