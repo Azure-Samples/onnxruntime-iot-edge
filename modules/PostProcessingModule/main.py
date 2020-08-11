@@ -2,6 +2,7 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
+import os
 import random
 import time
 import sys
@@ -16,7 +17,10 @@ from azure.iot.device import IoTHubMessageDispositionResult, IoTHubError
 MESSAGE_TIMEOUT = 10000
 
 # Set the CONNECTION_STRING from Azure Portal
-IOTHUB_CONNECTION_STRING = "{Primary Connection String}"
+IOTHUB_CONNECTION_STRING = os.getenv('IOTHUB_CONNECTION_STRING')
+print("IOTHUB_CONNECTION_STRING", IOTHUB_CONNECTION_STRING)
+if not IOTHUB_CONNECTION_STRING:
+    raise Exception("You have to set ENV variable for iothub connection string. See main.py of inference module.")
 
 def send_confirmation_callback(message, result, user_context):
     """
@@ -42,7 +46,10 @@ class HubManager(object):
         # set the time until a message times out
         self.client.set_option("messageTimeout", MESSAGE_TIMEOUT)
 
-        await self.connect()
+        self.connect()
+
+    async def connect(self):
+        await self.client.connect()
 
         # sets the callback when a message arrives on "postprocessinginput" queue.  Messages sent to 
         # other inputs or to the default will be silently discarded.
