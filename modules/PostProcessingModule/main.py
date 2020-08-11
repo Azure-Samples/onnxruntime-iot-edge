@@ -2,6 +2,7 @@
 # Licensed under the MIT license. See LICENSE file in the project root for
 # full license information.
 
+import os
 import random
 import time
 import sys
@@ -16,7 +17,10 @@ from azure.iot.device import IoTHubMessageDispositionResult, IoTHubError
 MESSAGE_TIMEOUT = 10000
 
 # Set the CONNECTION_STRING from Azure Portal
-IOTHUB_CONNECTION_STRING = "HostName=wopauliiothub.azure-devices.net;DeviceId=manashJetsonNX;SharedAccessKey=R3gbWjSKki6O/9NgU1fWVnnImrEvTJi/SurORDHjFkI="
+IOTHUB_CONNECTION_STRING = os.getenv('IOTHUB_CONNECTION_STRING')
+print("IOTHUB_CONNECTION_STRING", IOTHUB_CONNECTION_STRING)
+if not IOTHUB_CONNECTION_STRING:
+    raise Exception("You have to set ENV variable for iothub connection string. See main.py of inference module.")
 
 def send_confirmation_callback(message, result, user_context):
     """
