@@ -45,7 +45,7 @@
         },
         "modules": {
           "inferencemodule": {
-            "version": "1.0",
+            "version": "1.0.1",
             "type": "docker",
             "status": "running",
             "restartPolicy": "always",
