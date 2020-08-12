@@ -63,14 +63,15 @@ This part focuses on deploying an object detection model on your IoT Edge device
     CONTAINER_REGISTRY_ADDRESS="<_Login server_>"
     MY_STORAGE_ACCOUNT_NAME="<_Storage account name_>"
     MY_STORAGE_ACCOUNT_KEY="<_access key_>"
-    MY_STORAGE_CONNECTION_STRING="<_storage connection string_>"
+    MY_BLOB_STORAGE_CONNECTION_STRING="<_storage connection string_>"
+    MY_IOTHUB_CONNECTION_STRING="<Primary Connection string>"
     ```
 
     * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
 
 #### Cloud storage
 
- * Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False** in L#61.
+ * Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False** in L#61 (it's default set to _False_ in this sample).
 
  * In the **.env** file update the _MY_STORAGE_ACCOUNT_NAME_, _MY_STORAGE_ACCOUNT_KEY_ and _MY_STORAGE_CONNECTION_STRING_ entries with the details of your Azure Storage account details.
 
