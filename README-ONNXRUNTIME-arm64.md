@@ -203,9 +203,10 @@ If you completed phases one and two, you should have the following dependencies 
 
 * In the command palette, enter and run the command **Azure: Sign in** and follow the instructions to sign into your Azure account.
 
-* Open the **.env** file and edit the variables with the credentials of the container registry and storage account that was set up in [**phase one**](./README-Setup.md). You can find the details in your Azure Portal:
+* Open the **.env** file and edit the variables with the credentials of the container registry, IoT Hub and storage account that was set up in [**phase one**](./README-Setup.md). You can find the details in your Azure Portal:
     * The container registry credentials are in **Your resource group > Your container registry > Access keys**.
     * The storage account details are on the **Access Keys** tab of the Storage account page.
+    * The IoT Hub connection string is the _Primary connection string_ for the **IoT Edge** device setup in your IoT Hub.
 
 * Note the **Username** and **Login server**. Enable **Admin User**; this should generate two passwords. The first password is the one you need to note. Fill in the **.env** file so that it has the following entries filled with your specific resources:
 
@@ -218,12 +219,13 @@ CONTAINER_REGISTRY_ADDRESS="<Login server>"
 MY_STORAGE_ACCOUNT_NAME="<Storage account name>"
 MY_STORAGE_ACCOUNT_KEY="<access key>"
 MY_STORAGE_CONNECTION_STRING="<Connection string>"
+MY_IOTHUB_CONNECTION_STRING="<Primary Connection string>"
 ```
 
 * In the **CameraCaptureModule** directory, edit the file **camerainfo.csv** so that each line holds the camera number and the name of the camera delimited with a ','. The current csv is set for a camera with the name _cam1_ and camera number _0_.
 
 ### Cloud storage
-* Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False**.
+* Within the InferenceModule directory, main.py is the file in which blob storage is set up as well. By default, we are going to use blob storage and we have created the necessary resources for it. If you do not wish to use it, change the variable **CLOUD_STORAGE** to **False** (it's default set to _False_ in this sample).
 
     * Then in your deployment.template.json file, find the last occurrence of `azureblobstorageoniotedge`. This is where the device twin properties of your blob storage module are set.
 
