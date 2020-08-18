@@ -1,7 +1,3 @@
-# Copyright (c) Microsoft. All rights reserved.
-# Licensed under the MIT license. See LICENSE file in the project root for
-# full license information.
-
 import sys
 import time
 import io
@@ -13,6 +9,7 @@ import onnxruntime as rt
 from inference import run_onnx
 import numpy as np
 
+# Imports for communication w/IOT Hub
 from azure.iot.device import IoTHubDeviceClient
 from azure.iot.device import Message
 from azure.core.exceptions import ResourceExistsError
@@ -47,8 +44,10 @@ start_time = time.time()
 sess = rt.InferenceSession("TinyYOLO.onnx")
 print("loaded after", time.time() - start_time, "s")
 
-IOTHUB_CONNECTION_STRING = "<>"
-BLOB_STORAGE_CONNECTION_STRING = "<>"
+IOTHUB_CONNECTION_STRING = os.getenv('IOTHUB_CONNECTION_STRING')
+BLOB_STORAGE_CONNECTION_STRING = os.getenv('BLOB_STORAGE_CONNECTION_STRING')
+print("IOTHUB_CONNECTION_STRING", IOTHUB_CONNECTION_STRING)
+print("BLOB_STORAGE_CONNECTION_STRING", BLOB_STORAGE_CONNECTION_STRING)
 
 # Path to CSV FILE (edit if you want)
 LATEST_FULL_PATH = "/home/storagedata/objectcountlatest.csv"
@@ -61,7 +60,7 @@ TIME_ZONE = timezone("US/Pacific")
 
 # This is a boolean marking whether to use cloud storage or not.
 # Change to true and follow tutorial instructions if you would like to use it.
-CLOUD_STORAGE = True
+CLOUD_STORAGE = False
 print("CLOUD STORAGE STATUS:", CLOUD_STORAGE)
 
 CONTAINER_NAME = "storagetest"
@@ -80,7 +79,8 @@ if CLOUD_STORAGE:
         pass
     blob_client = block_blob_service.get_blob_client(container=CONTAINER_NAME, blob=DAILY_CSV_NAME)
     blob_client.upload_blob(DAILY_STRING, overwrite=True)
-        
+
+
 
 class HubManager(object):
     def __init__(self):
@@ -136,10 +136,11 @@ has_changed = {}
 
 @app.route("/", methods=["POST"])
 def frame_handler():
-    """ 
-	Handles incoming post requests. Gets frame from request and calls inferencing function on frame.
-	Sends result to IOT Hub.
-	"""
+    """
+    Handles incoming post requests. Gets frame from request and calls inferencing function on frame.
+    Sends result to IOT Hub.
+    """
+    
     try:
         global current_date
         global DAILY_STRING
@@ -201,8 +202,9 @@ def frame_handler():
 
 def get_tinyyolo_frame_from_encode(msg):
     """
-	Formats jpeg encoded msg to frame that can be processed by tiny_yolov2
-	"""
+    Formats jpeg encoded msg to frame that can be processed by tiny_yolov2
+    """
+    
     inp = np.array(msg).reshape((len(msg), 1))
     frame = cv2.imdecode(inp.astype(np.uint8), 1)
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)

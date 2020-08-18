@@ -12,35 +12,30 @@ variables:
   azureSubscriptionEndpoint: wopauliarm
 
 steps:
-# Command line
-# Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
-- task: CmdLine@2
-  inputs:
-    script: 'docker login -u $(CONTAINER_REGISTRY_USERNAME) -p $(CONTAINER_REGISTRY_PASSWORD) $(CONTAINER_REGISTRY_ADDRESS)' 
-
 - task: AzureIoTEdge@2
   displayName: AzureIoTEdge - Build module images
   inputs:
     action: Build module images
     templateFilePath: deployment.template.json
-    defaultPlatform: arm64
+    defaultPlatform: arm64v8
 
 - task: AzureIoTEdge@2
+  displayName: AzureIoTEdge - Push module images
   inputs:
     action: 'Push module images'
     containerregistrytype: 'Azure Container Registry'
     azureSubscriptionEndpoint: 'wopauliarm'
     azureContainerRegistry: '{"loginServer":"wopaulionnx.azurecr.io", "id" : "/subscriptions/a6c2a7cc-d67e-4a1a-b765-983f08c0423a/resourceGroups/wopauliseekeredge_rg/providers/Microsoft.ContainerRegistry/registries/wopaulionnx"}'
     templateFilePath: 'deployment.template.json'
-    defaultPlatform: 'arm64'
+    defaultPlatform: 'arm64v8'
     fillRegistryCredential: 'true'
 
 - task: AzureIoTEdge@2
   displayName: 'Azure IoT Edge - Deploy to IoT Edge devices'
   inputs:
-    action: Create deployment for single device
-    deploymentFilePath: $(System.DefaultWorkingDirectory)/config/deployment.arm64.json
-    azureSubscription: $(AZURE_SUBSCRIPTION)
-    iothubname: wopaulionnx
+    action: 'Deploy to IoT Edge device'
+    deploymentFilePath: '$(System.DefaultWorkingDirectory)/config/deployment.arm64v8.json'
+    azureSubscription: wopauliarm
+    iothubname: wopauliiothub
     deviceOption: 'Single Device'
-    deviceId: edgeDevice
+    deviceId: manashJetsonNX

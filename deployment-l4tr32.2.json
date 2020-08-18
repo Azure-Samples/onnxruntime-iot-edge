@@ -101,14 +101,7 @@
                   ]
                 }
               }
-            },
-            "env": {
-              "IOTHUB_CONNECTION_STRING": {
-                  "value": "$MY_IOTHUB_CONNECTION_STRING"
-            },
-            "BLOB_STORAGE_CONNECTION_STRING": {
-              "value": "$MY_BLOB_STORAGE_CONNECTION_STRING"
-            }}
+            }
           },
           "CameraCaptureModule": {
             "version": "1.0",
@@ -182,7 +175,7 @@
           "cloudStorageConnectionString": "$MY_STORAGE_CONNECTION_STRING",
           "storageContainersForUpload": {
             "localcontainer": {
-              "target": "storagetest"
+              "target": "$MY_STORAGE_ACCOUNT_NAME"
             }
           },
           "deleteAfterUpload": "true"
