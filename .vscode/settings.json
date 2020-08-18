@@ -1,8 +1,0 @@
-{
-    "azure-iot-edge.defaultPlatform": {
-        "platform": "arm64",
-        "alias": null
-    },
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-}
