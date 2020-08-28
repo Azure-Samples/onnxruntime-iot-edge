@@ -1,4 +1,3 @@
-# download model
 import json
 from azureml.core import Workspace, Model, VERSION
 from azureml.core.authentication import ServicePrincipalAuthentication
@@ -19,10 +18,9 @@ ws = Workspace.create(
     auth=auth,
     subscription_id=config['subscription_id'],
     resource_group=config['resource_group'],
+    location=config['location']
     exist_ok=True,
     show_output=True,
 )
 
-model = Model(ws, name="TinyYOLO")
-
-model.download(target_dir="modules/InferenceModule/")
+Model.register(ws, 'models/TinyYOLO.onnx', 'TinyYOLO')
